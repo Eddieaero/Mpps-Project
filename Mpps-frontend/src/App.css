@@ -1,6 +1,18 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px;
+  max-height: 100%; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+html,
+body {
+  box-sizing: border-box; /* Consistent box model behavior */
+  margin: 0; /* Remove default browser margins */
+  font-family: sans-serif; /* Basic font family */
+  font-size: 16px; /* Base font size */
+  line-height: 1.5; /* Basic line height */
+  /* height: 100%; */
+  /* width: 100%; */
 }

@@ -6,6 +6,7 @@ import Team from './modules/Team/Team';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './modules/PrivateRoute/PrivateRoute';
 
+// private dashboard implementation
 import Dashboard from './modules/Dashboard/Dashboard';
 import Verify from './modules/Verify/Verify';
 import Payment from './modules/Payment/Payment';
@@ -17,17 +18,17 @@ import Checkpoint from './modules/CheckPoint/CheckPoint';
 
 
 
-function App() {
+const App = () => {
   // const [count, setCount] = useState(0)
   const isLoggedIn = localStorage.getItem('userToken'); // Replace with your JWT storage
 
   return (
     <Router>
       <Routes>
-        <Route path='/' element={Home}/>
-        <Route path='/features' element={Features}/>
-        <Route path='/products' element={Products}/>
-        <Route path='/team' element={Team}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/features' element={<Features/>}/>
+        <Route path='/products' element={<Products/>}/>
+        <Route path='/team' element={<Team/>}/>
         <Route
                     path="/dashboard"
                     element={<PrivateRoute isLoggedIn={isLoggedIn}>
