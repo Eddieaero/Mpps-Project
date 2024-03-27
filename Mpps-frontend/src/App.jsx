@@ -1,4 +1,5 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './modules/Home/Home';
 import Features from './modules/Features/Features';
 import Products from './modules/Products/Products';

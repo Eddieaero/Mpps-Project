@@ -1,48 +1,70 @@
 // import React from "react";
+// import './custom-colors.css';
+import '../../custom-colors.css';
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import "./NavBar.css";
-import Mppslogo from "../../assets/Mppslogo.png";
+// import "./App.css"
+import Mppslogo from "../../assets/Mppslogo.svg";
+
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
+
+
+
+
 
 const NavBar = () => {
 
     const [nav, setNav] = useState(false);
 
+    const NavItems = [
+        {path: '/', link: 'Home'},
+        {path: '/features', link: 'Features'},
+        {path: '/products', link: 'Products'},
+        {path: '/team', link: 'Team'}
+    ]
+
     const handleNav = () => {
       setNav(!nav);
     };
 
-    return(
-        <div className="NavBar flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white" >
-            <img className="Logo" src={Mppslogo} alt="logo"></img>
-            <div className="NavLinks">
-                <ul className="hidden md:flex">
-                    <li className="p-4">Home</li>
-                    <li className="p-4">Features</li>
-                    <li className="p-4">Products</li>
-                    <li className="p-4">Team</li>
-                </ul>
-            </div>
-            <div onClick={handleNav} className='block md:hidden'>
-                {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20} />}
-            </div>
-                <ul className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%]'}>
-                    <div>Logo</div>
-                    <li className="p-4 border-b border-gray-600">Home</li>
-                    <li className="p-4 border-b border-gray-600">Features</li>
-                    <li className="p-4 border-b border-gray-600">Products</li>
-                    <li className="p-4 border-b border-gray-600">Team</li>
-                </ul>
-            <div className="UserButtons">
-                <ul>
-                    <li>Sign Up</li>
-                    <li>Sign In</li>
-                </ul>
-            </div>
 
-        </div>
+    return(
+      <Navbar className='p-3 mb-5 ' style={{backgroundColor: 'var(--custom-white )', boxShadow: 'none' }} data-bs-theme="light">
+        <Container >
+          <Navbar.Brand href="/">
+            <img
+              src={Mppslogo}
+              width="40"
+              height="40"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
+          <Nav className="me-auto justify-center">
+            <Nav.Link >
+              {NavItems.map(({path, link}) => (
+                  <li  key={link} className="px-2 py-1 text-black float-start">
+                      <NavLink style={{ color: 'black' }} to={path} activeclassname=" active">{link}</NavLink>
+                  </li>
+              ))}
+            </Nav.Link>
+          </Nav>
+          <div className="">
+            <Button className="" style={{  border: " 2px solid var(--whitish-green)", backgroundColor: "var(--plain-white)", color: "var(--primary-green)" }} >sign in</Button>
+            <Button className=" m-2"  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >sign up</Button>
+          </div>
+
+
+        </Container>
+      </Navbar>
 
     )
+
 }
 
 export default NavBar

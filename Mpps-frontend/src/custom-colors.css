@@ -1,0 +1,18 @@
+:root {
+    --custom-white:#DAE1D7;
+    --whitish-green: #D7FFC5;
+    --darkish-green: #506554;
+    --light-green: #2ED234;
+    --primary-green: #4CD964;
+    --plain-white: #FFFFFF;
+    --next-white: #F9F9F9;
+    --plain-black: #000000;
+    /* Define other custom colors */
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+
+ 

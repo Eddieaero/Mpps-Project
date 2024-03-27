@@ -4,25 +4,39 @@
 .Home {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    /* align-items: center; */
+    /* justify-content: center; */
+    padding: 2px;
+    background-color: #DAE1D7;
+    height: 100%;
+    width: 100%;
+
 }
 
 
-/* .Home .NavBar {
-    background-color: #333;
+ /* .NavBar {
+    background-color: #DAE1D7;
     color: #fff;
-    padding: 20px;
-} */
+    padding: 2px;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+}
+
+.NavBar a {
+    color: #fff;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}  */
 /* Style the Home title */
-.Home h1 {
+/* .Home h1 {
     font-size: 2em;
     color: #333;
-}
+} */
 
 /* Style the Home body content */
-.Home p {
+/* .Home p {
     font-size: 1.2em;
     color: #666;
-} 
+}  */
