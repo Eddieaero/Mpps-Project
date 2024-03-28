@@ -15,12 +15,12 @@ import Card1 from '../../components/Card/Card1';
 
 const Home = () =>{
     return (
-        <div className="Home">
+        <div className="Home align-items-center">
             <NavBar className="NavBar"/>
 
             <HeroSection/>
             
-            <Container className='  '  style={{ backgroundColor: "var(--next-white)", borderRadius: "35px" }}>
+            <Container className='  '  style={{ backgroundColor: "var(--next-white)", margin: "1rem", padding: "1rem", maxWidth: "78rem",  borderRadius: "35px" }}>
                 <Card1/>
                 {/* </Card1> */}
             </Container>
