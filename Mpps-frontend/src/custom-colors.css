@@ -1,5 +1,9 @@
 :root {
     --custom-white:#DAE1D7;
+    --custom-bg-white: #BDBCBC;
+    --custom-grey-100: rgba(80, 101, 84);
+    --custom-grey-25: rgba(80, 101, 84, 0.25);
+    --custom-grey-50: rgba(80, 101, 84, 0.5);
     --whitish-green: #D7FFC5;
     --darkish-green: #506554;
     --light-green: #2ED234;
@@ -14,6 +18,10 @@
   body {
     font-family: 'Open Sans', sans-serif;
   }
-  
+
+
+
+
+
 
  

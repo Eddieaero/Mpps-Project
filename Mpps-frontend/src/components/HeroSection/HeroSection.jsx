@@ -27,8 +27,8 @@ import Button from "react-bootstrap/Button";
 const HeroSection = () => {
 
     return (
-        <Container className="MainDiv  flex justify-center" style={{backgroundColor: 'var(--custom-white )'}}>
-            <Row className="Minidiv">
+        <Container className="MainDiv  flex justify-center" style={{backgroundColor: 'var(--custom-white )', maxWidth: "100%"}}>
+            <Row className="Minidiv  m-2   p-5">
                 <Col  className="Div1 mt-5 p-5 "  lg={6}>
                     <img src={herocard} alt="herocard" className="HeroCard"></img>
                 </Col>

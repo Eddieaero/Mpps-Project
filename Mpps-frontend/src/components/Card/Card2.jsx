@@ -17,7 +17,7 @@ import { TreeEvergreen } from "@phosphor-icons/react";
 const Card2 = () => {
  return (
     <div>
-      <Container>
+      <Container className=' mb-5 '>
          <Row>
             <div className=" flex  text-center p-3">
                <p className=" d-flex justify-content-center text-center " style={{ fontSize: "15px", fontWeight: "bold" }}>Products</p>
