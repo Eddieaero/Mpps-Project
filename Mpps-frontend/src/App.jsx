@@ -1,5 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './modules/Login/Login';
+import Signup from './modules/Signup/Signup';
 import Home from './modules/Home/Home';
 import Features from './modules/Features/Features';
 import Products from './modules/Products/Products';
@@ -23,52 +25,56 @@ const App = () => {
   // const [count, setCount] = useState(0)
   const isLoggedIn = localStorage.getItem('userToken'); // Replace with your JWT storage
 
+
   return (
     <Router>
       <Routes>
+        <Route path="/login" element={<Login/>} />
+        <Route path='/Signup' element={<Signup/>}/>
         <Route path='/' element={<Home/>}/>
         <Route path='/features' element={<Features/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/team' element={<Team/>}/>
+        <Route path='/Dashboard' element={<Dashboard/>}/>
         <Route
-                    path="/dashboard"
-                    element={<PrivateRoute isLoggedIn={isLoggedIn}>
-                        <Dashboard />
-                    </PrivateRoute>}
-                />
+                path="/Dashboard"
+                element={<PrivateRoute isLoggedIn={isLoggedIn}>
+                    <Dashboard/>
+                </PrivateRoute>}
+            />
                 {/* Individual protected routes wrapped with PrivateRoute */}
-                <Route
-                    path="/dashboard/applications"
-                    element={
-                        <PrivateRoute isLoggedIn={isLoggedIn}>
-                            <Application />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/dashboard/checkpoint"
-                    element={
-                        <PrivateRoute isLoggedIn={isLoggedIn}>
-                            <Checkpoint />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/dashboard/verify"
-                    element={
-                        <PrivateRoute isLoggedIn={isLoggedIn}>
-                            <Verify />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path="/dashboard/payment"
-                    element={
-                        <PrivateRoute isLoggedIn={isLoggedIn}>
-                            <Payment />
-                        </PrivateRoute>
-                    }
-                />
+        <Route
+                path="/dashboard/applications"
+                element={
+                    <PrivateRoute isLoggedIn={isLoggedIn}>
+                        <Application/>
+                    </PrivateRoute>
+                }
+            />
+        <Route
+                path="/dashboard/checkpoint"
+                element={
+                    <PrivateRoute isLoggedIn={isLoggedIn}>
+                        <Checkpoint/>
+                    </PrivateRoute>
+                }
+        />
+        <Route
+                path="/dashboard/verify"
+                element={
+                    <PrivateRoute isLoggedIn={isLoggedIn}>
+                        <Verify/>
+                    </PrivateRoute>
+                }
+            />
+        <Route
+                path="/dashboard/payment"
+                element={
+                    <PrivateRoute isLoggedIn={isLoggedIn}>
+                        <Payment />
+                    </PrivateRoute>
+                }
+            />
       </Routes>
     </Router>
   )

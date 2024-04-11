@@ -20,3 +20,20 @@ body {
   height: 100%; 
   width: 100%;
 }
+
+
+/* App.css */
+
+.myButton {
+  border: 2px solid var(--light-green);
+  Color: var(--plain-black);
+  background-color: var(--whitish-green);
+  color: var(--plain-black);
+}
+
+.myButton:hover {
+  background-color: var(--plain-black);
+  color: var(--whitish-green);
+  box-shadow: 0px 5px 10px rgb(76, 217, 100, 0.5);
+  z-index: 1;
+}

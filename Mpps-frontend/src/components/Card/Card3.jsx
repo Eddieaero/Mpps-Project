@@ -13,6 +13,8 @@ import Card from 'react-bootstrap/Card';
 
 
 import Eddie from  "../../assets/20221223_125407_remastered.jpg";
+import hellen from  "../../assets/hellen.jpg";
+// import george from  "../../assets/george.jpg";
 
 
 const Card3 = () => {
@@ -30,7 +32,7 @@ const Card3 = () => {
                     <Card className= " justify-content-center " style={{ border: "3px solid var(--plain-white)", backgroundColor: "var(--next-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "22px", width: "65rem", height: "20rem"}}>
                         <Row className='m-1 align-items-center '>
                             <Col className='d-flex flex-column align-items-center justify-content-center p-5 m-2'>
-                                <div className='m-1' style={{ width: "9.8rem", height: "9.8rem", borderRadius: "50%", overflow: "hidden" }}> <img  src={Eddie} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/> </div>
+                                <div className='m-1' style={{ width: "9.8rem", height: "9.8rem", borderRadius: "50%", overflow: "hidden" }}> <img  src={hellen} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/> </div>
                                 <h1 style={{ fontWeight: "bold", color: "var(--darkish-green)", fontSize: "20px"}}> Hellen Mziray</h1>
                                 <p style={{ fontWeight: "normal", color: "var(--darkish-green)", fontSize: "15px"}}> Software Developer </p>
                             </Col>

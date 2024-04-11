@@ -4,11 +4,18 @@
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 
+
+
+import Container from "react-bootstrap/Container";
+
+
+
 const Products = () => {
 
     return(
         <div>
             <NavBar/>
+            <Container/>
             <Footer/>
 
         </div>
@@ -16,3 +23,14 @@ const Products = () => {
 }
 
 export default Products
+
+
+
+
+
+
+
+
+
+
+

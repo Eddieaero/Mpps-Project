@@ -19,6 +19,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 const PrivateRoute = ({ isLoggedIn }) => {
   // Temporary state for testing (replace with backend logic later)
+  // const [isLoggedInState, setIsLoggedInState] = useState(false);
   const [isLoggedInState, setIsLoggedInState] = useState(true);
 
   // Handle simulated login/logout (optional)

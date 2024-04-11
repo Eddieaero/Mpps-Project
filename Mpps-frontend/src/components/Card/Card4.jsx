@@ -43,7 +43,7 @@ const Card4 = () => {
                                 </Card>
                             </Col>
                             <Col className='d-flex flex-column align-items-center justify-content-center '>
-                                <Card style={{ width: "17rem", height: "15rem", borderRadius: "22px"}} className='d-flex flex-column align-items-center justify-content-center p-1'>
+                                <Card style={{ width: "17rem", height: "15rem", borderRadius: "22px"}} className='d-flex flex-column align-items-center justify-content-center p-1 '>
                                 <div className='p-1' style={{ width: "9.8rem", height: "9.8rem", borderRadius: "0%", overflow: "hidden" }}> <img  src={mapboxlogo} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/> </div>
                                     <h1  style={{ fontWeight: "bold", color: "var(--darkish-green)", fontSize: "20px"}}>Mapbox</h1>
                                     <p style={{ fontWeight: "normal", color: "var(--darkish-green)", fontSize: "15px"}}> Mapbox Geo-data Platform</p>
