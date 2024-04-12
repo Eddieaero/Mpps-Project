@@ -28,6 +28,7 @@ const SideNavBar = () => {
         const [activeItem, setActiveItem] = useState(null);
         const [isExpanded, setIsExpanded] = useState(false);
         const [sidebarWidth, setSidebarWidth] = useState('80px');
+        const [navItemWidth, setnavItemWidth] = useState("0px");
         // const [sidebar, setSidebar] = useState(false);
         // const showSidebar= () => setSidebar(!sidebar)
       
@@ -68,10 +69,13 @@ const SideNavBar = () => {
               <div onMouseEnter={() => {
                               setIsExpanded(true);
                               setSidebarWidth('250px');
+                              setnavItemWidth('200px');
+
                             }}
                             onMouseLeave={() => {
                               setIsExpanded(false);
                               setSidebarWidth('80px');
+                              setnavItemWidth('200px');
                             }}>
                 {SideBarData.map((item, index) => {
                     return (

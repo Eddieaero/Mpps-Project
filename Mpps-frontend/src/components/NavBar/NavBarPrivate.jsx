@@ -53,11 +53,11 @@ const NavBarPrivate = ( ) => {
           </Navbar.Brand>
           
           <div className=" p-5 d-flex  ">
-            <div className="m-1 align-items-center justify-items-center" style={{ width: "40px", height: "40px", borderRadius: "50px", backgroundColor: "var(--darkish-green)"}}>
-                <BiUser className="p-1 align-items-center justify-items-center" size={39}/>
+            <div className="m-2 align-items-center justify-items-center" style={{ width: "35px", height: "35px", borderRadius: "50px", backgroundColor: "var(--darkish-green)"}}>
+                <BiUser className="p-1 align-items-center justify-items-center" size={35}/>
             </div>
-            <p className="m-1 align-items-center justify-items-center" style={{color: "var(--plain-black)", fontSize: "25px", fontWeight: "normal"}}>
-                George 
+            <p className="m-2 align-items-center justify-items-center" style={{color: "var(--plain-black)", fontSize: "20px", fontWeight: "normal"}}>
+                profile 
             </p>
           </div>
         </Container>
