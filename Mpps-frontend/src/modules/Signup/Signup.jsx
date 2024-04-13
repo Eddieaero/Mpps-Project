@@ -15,6 +15,7 @@ import Col from "react-bootstrap/Col"
 
 
 import bgpic from "../../assets/pine ui background.svg";
+import {ArrowRight} from "@phosphor-icons/react";
 
 const Signup = () => {
 
@@ -28,7 +29,7 @@ const Signup = () => {
                 
 
                 <Form className="p-5">
-                <Row  className= "p-5 m-5 align-items-center justify-content-center " style={{ border: "3px solid var(--plain-white)", backgroundColor: "var(--next-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "22px" }}>
+                <Row  className= "p-4 m-5 align-items-center justify-content-center " style={{ border: "3px solid var(--plain-white)", backgroundColor: "var(--next-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "22px" }}>
                     <h1 className='text-center'>
                         Register here
                     </h1>
@@ -80,9 +81,20 @@ const Signup = () => {
                             <Form.Control type="password" placeholder="" required/>
                         </Form.Group>
 
-                        <Button className=" myButton m-2 align-items-center justify-content-center "  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
-                                <NavLink style={{   color: "var(--plain-black)", textDecoration: 'none'  }} to="/dashboard"> Submit </NavLink>
-                        </Button>
+                        <div>
+                        <div className="d-flex align-items-center justify-content-center">
+                            <Button className=" myButton m-2 align-items-center justify-content-center "  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
+                                    <NavLink style={{   color: "var(--plain-black)", textDecoration: 'none'  }} to="/dashboard"> Submit </NavLink>
+                            </Button>
+                        </div>
+                        <div className='d-flex align-items-center justify-content-center'>
+                                <p className='m-2'>Already have an account?</p>
+                                <NavLink className='' style={{ textDecoration: "none ", color: "var(--light-green) ",borderRadius: "5px", border: " 0px solid var(--whitish-green)"}} to="/Login"> 
+                                    Go to Login
+                                    <ArrowRight className='m-1' size={25} weight="bold" />
+                                </NavLink>
+                        </div>
+                        </div>
                     </Col>
                 </Row>
                 </Form>

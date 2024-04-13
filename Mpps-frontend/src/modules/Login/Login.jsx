@@ -20,6 +20,7 @@ import Col from "react-bootstrap/Col"
 
 import bgpic from "../../assets/pine ui background.svg";
 import logo from "../../assets/Mppslogo.svg";
+import {ArrowRight} from "@phosphor-icons/react";
 
 
 const Login = () => {
@@ -84,10 +85,19 @@ const Login = () => {
                             {/* <Button variant="primary" type="submit">
                                 Submit
                             </Button> */}
-                            <Button type='submit' className=" myButton m-2 align-items-center justify-content-center "  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
-                                <NavLink style={{   color: "var(--plain-black)", textDecoration: 'none'  }} to="/Dashboard"> Submit </NavLink>
-                                {/* Submit */}
-                            </Button>
+                            <div className='d-flex align-items-center justify-content-center'>
+                                <Button type='submit' className=" myButton m-1 align-items-center justify-content-center "  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
+                                    <NavLink style={{   color: "var(--plain-black)", textDecoration: 'none'  }} to="/Dashboard"> Submit </NavLink>
+                                    {/* Submit */}
+                                </Button>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-center'>
+                                <p className='m-2'>you don't have an account?</p>
+                                <NavLink className='' style={{ textDecoration: "none ", color: "var(--light-green) ",borderRadius: "5px", border: " 0px solid var(--whitish-green)"}} to="/Signup"> 
+                                    Go to sign up
+                                    <ArrowRight className='m-1' size={25} weight="bold" />
+                                </NavLink>
+                            </div>
                         </Form>
                     </Card>
                     </Col>
