@@ -2,7 +2,8 @@
 
 import { NavLink } from "react-router-dom";
 
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
+import FooterSpe from "../../components/Footer/FooterSpe";
 
 
 import NavBar from "../../components/NavBar/NavBar";
@@ -100,7 +101,7 @@ const Signup = () => {
                 </Form>
             </Container>
             </div>
-            <Footer/>
+            <FooterSpe/>
         </div>
     )
 }

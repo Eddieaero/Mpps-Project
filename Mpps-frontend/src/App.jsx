@@ -14,7 +14,7 @@ import Dashboard from './modules/Dashboard/Dashboard';
 import Verify from './modules/Verify/Verify';
 import Payment from './modules/Payment/Payment';
 import Application from './modules/Application/Application';
-import Checkpoint from './modules/CheckPoint/CheckPoint';
+import CheckPoint from './modules/CheckPoint/CheckPoint';
 
 
 
@@ -35,7 +35,11 @@ const App = () => {
         <Route path='/features' element={<Features/>}/>
         <Route path='/products' element={<Products/>}/>
         <Route path='/team' element={<Team/>}/>
-        {/* <Route path='/Dashboard' element={<Dashboard/>}/> */}
+        <Route path='/Dashboard' element={<Dashboard/>}/>
+        <Route path='/Application' element={<Application/>}/>
+        <Route path='/Checkpoint' element={<CheckPoint/>}/>
+        <Route path='/Verify' element={<Verify/>}/>
+        <Route path='/Payment' element={<Payment/>}/>
         <Route
                 path="/Dashboard"
                 element={<PrivateRoute isLoggedIn={isLoggedIn}>
@@ -55,7 +59,7 @@ const App = () => {
                 path="/dashboard/checkpoint"
                 element={
                     <PrivateRoute isLoggedIn={isLoggedIn}>
-                        <Checkpoint/>
+                        <CheckPoint/>
                     </PrivateRoute>
                 }
         />

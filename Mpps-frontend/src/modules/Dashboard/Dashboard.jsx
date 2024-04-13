@@ -4,7 +4,8 @@
 import '../../custom-colors.css';
 import '../../App.css'; 
 
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
+import FooterSpe from "../../components/Footer/FooterSpe";
 
 import SideNavBar from "../../components/SideNavBar/SideNavBar";
 import NavBarPrivate from "../../components/NavBar/NavBarPrivate";
@@ -27,7 +28,7 @@ const Dashboard = () => {
            <NavBarPrivate style={{ }}/>
            <div className=''>
                   <SideNavBar/>
-            </div>
+           </div>
             <div className='d-flex flex mainContent'>
                 <div className='' style={{ width: "95%", height: "100%"}}>
                     <div className=' '>
@@ -51,9 +52,9 @@ const Dashboard = () => {
                         <Row>
                         <Col lg={12} className='p-0'>
                          <Row  className='m-0'>
-                            <div className='m-3 p-3' style={{borderRadius: "22px", backgroundColor: "var(--darkish-green)", width: "400px", height: "170px"}}>
-                                <h1 style={{fontSize: "25px", color: "var(--whitish-green)"}}>Apply for transit pass</h1>
-                                <p style={{color: "var(--whitish-green)"}}>Enter track details and verify your application with us</p>
+                            <div className='m-3 p-3' style={{borderRadius: "22px", backgroundColor: "var(--custom-white)", width: "400px", height: "170px"}}>
+                                <h1 style={{fontSize: "25px", color: "var(--darkish-green)"}}>Apply for transit pass</h1>
+                                <p style={{color: "var(--darkish-green)"}}>Enter track details and verify your application with us</p>
                                 <Button className=" HeroText3   " style={{marginLeft: "230px", borderRadius: "50px", border: " 2px solid var(--whitish-green)", backgroundColor: "var(--darkish-green)", color: "var(--whitish-green)", height: "38px"}}>
                                     Start here <ArrowRight size={25} weight="bold" />
                                 </Button>
@@ -109,8 +110,8 @@ const Dashboard = () => {
                             </div>
                         </Row>
                         <Row className=' m-1'>
-                             <div  className='m-3' style={{width: "25rem", height: "10.6rem", borderRadius: "22px", backgroundColor: "var(--darkish-green)"}}>
-                                <h1 className='m-3 text-center'  style={{fontSize: "20px", color: "var(--whitish-green)"}}>Products Supported</h1>
+                             <div  className='m-3' style={{width: "25rem", height: "10.6rem", borderRadius: "22px", backgroundColor: "var(--custom-white)"}}>
+                                <h1 className='m-3 text-center'  style={{fontSize: "20px",fontWeight: "bold", color: "var(--darkish-green)"}}>Products Supported</h1>
                                 <Row>
                                     <div className='align-items-center  m-2' style={{ width: "5rem", height: "5rem", borderLeft: "0px solid var(--whitish-green)",boxShadow: "2px 10px 10px rgba(0, 0, 0, 0.2)", backgroundColor: "var(--primary-green)", borderRadius: "14px"}} >
                                         <TreePalm className='m-1 ' size={45} weight="bold" color='var(--whitish-green)' />
@@ -162,7 +163,7 @@ const Dashboard = () => {
                      </div>
                 </div>
             </div>
-            {/* <Footer/> */}
+            <FooterSpe/>
         </div>
     )
 }

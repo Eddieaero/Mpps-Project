@@ -7,7 +7,8 @@ import { Post } from 'react-axios';
 import '../../custom-colors.css';
 import '../../App.css'; 
 
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
+import FooterSpe from "../../components/Footer/FooterSpe";
 
 import NavBar from "../../components/NavBar/NavBar";
 import Container from "react-bootstrap/Container";
@@ -47,7 +48,7 @@ const Login = () => {
                 <NavBar renderButtons={false}/>
             </div>
             <div>
-            <Container className="p-5 " style={{ backgroundImage: `url(${bgpic})` ,backgroundPosition: 'center',  backgroundSize: 'cover',backgroundRepeat: 'no-repeat', height: '100vh', maxWidth: "100%" , padding: '0', margin: '0' }} >
+            <Container className="p-5 " style={{ backgroundImage: `url(${bgpic})` ,backgroundPosition: 'center',  backgroundSize: 'cover',backgroundRepeat: 'no-repeat', maxHeight: '100%', maxWidth: "100%" , padding: '0', margin: '0' }} >
                 <Row className= "p-5 m-5 align-items-center justify-content-center " style={{ border: "3px solid var(--plain-white)", backgroundColor: "var(--next-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "22px" }}>
                     <Col className='d-flex justify-content-center align-items-center ' >
                         <div className='m-5 align-items-center justify-content-center' >
@@ -105,7 +106,7 @@ const Login = () => {
                 
             </Container>
             </div>
-            <Footer/>
+            <FooterSpe/>
         </div>
     )
 }

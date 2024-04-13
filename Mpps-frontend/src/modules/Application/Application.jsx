@@ -4,7 +4,7 @@
 import '../../custom-colors.css';
 import '../../App.css'; 
 
-import Footer from "../../components/Footer/Footer";
+import FooterSpe from "../../components/Footer/FooterSpe";
 
 
 import NavBarPrivate from "../../components/NavBar/NavBarPrivate";
@@ -15,8 +15,14 @@ const Application = () => {
     return(
         <div>
             <NavBarPrivate/>
-            <SideNavBar/>
-            <Footer/>
+            <div>
+                <SideNavBar/>
+            </div>
+            <div>
+                
+            </div>
+            
+            <FooterSpe/>
         </div>
     )
 }

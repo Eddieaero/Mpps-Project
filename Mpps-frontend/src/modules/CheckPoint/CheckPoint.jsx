@@ -3,7 +3,8 @@
 import '../../custom-colors.css';
 import '../../App.css'; 
 
-import Footer from "../../components/Footer/Footer";
+import FooterSpe from "../../components/Footer/FooterSpe";
+import SideNavBar from '../../components/SideNavBar/SideNavBar';
 
 
 import NavBarPrivate from "../../components/NavBar/NavBarPrivate";
@@ -12,9 +13,16 @@ const Checkpoint = () => {
 
     return(
         <div>
-            <NavBarPrivate/>    
-            <Footer/>
+        <NavBarPrivate/>
+        <div>
+            <SideNavBar/>
         </div>
+        <div>
+            
+        </div>
+        
+        <FooterSpe/>
+    </div>
     )
 }
 
