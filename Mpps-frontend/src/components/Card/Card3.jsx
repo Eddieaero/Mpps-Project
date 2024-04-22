@@ -26,7 +26,7 @@ const Card3 = () => {
                 <div className=" flex  text-center p-3">
                     <p className=" d-flex justify-content-center text-center " style={{ fontSize: "15px", fontWeight: "bold" }}>Team</p>
                     <h1 className=" d-flex justify-content-center text-center " style={{ fontSize: "40px", fontWeight: "bold" }}>Meet Our Supportive team</h1>
-                    <p className=" d-flex justify-content-center text-center " style={{ fontSize: "12px", fontWeight: "normal" }}>See what products we consider on application</p>
+                    <p className=" d-flex justify-content-center text-center " style={{ fontSize: "12px", fontWeight: "normal" }}>Innovative and creative minds to impact fast growing businesses </p>
                 </div>
                 <div className= "d-flex  justify-content-center   ">
                     <Card className= " justify-content-center " style={{ border: "3px solid var(--plain-white)", backgroundColor: "var(--next-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "22px", width: "65rem", height: "20rem"}}>

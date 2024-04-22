@@ -26,7 +26,7 @@ const Card1 = () => {
                     </div>
                     <div className="d-flex col-12 " >
                         <Row>
-                            <Card className="d-flex p-2 m-2 "  style={{backgroundColor: "var(--next-white)", border: "3px solid var(--plain-white)", boxShadow: "-5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "30px", width: "34rem", height: "9rem" }} >
+                            <Card className="d-flex p-2 m-2 "  style={{backgroundColor: "var(--next-white)", border: "3px solid var(--plain-white)", boxShadow: "-5px 50px 50px rgba(0, 0, 0, 0.01)", borderRadius: "30px", width: "34rem", height: "9rem" }} >
                                 <Row className="m-1">
                                     <Col lg={4} className="d-flex  p-2 justify-content-center align-items-center" style={{ backgroundColor: "var(--custom-white)", width: "10rem", height: "7rem", borderRadius: "22px"}}>
                                         <FingerprintSimple style={{color:"var(--plain-white)", margin: "5px"}} className=" " size={95} weight="bold" />   
@@ -41,7 +41,7 @@ const Card1 = () => {
                                 </Row>
                                 
                             </Card>
-                            <Card className="d-flex p-2 m-2"  style={{backgroundColor: "var(--next-white)", border: "3px solid var(--plain-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "30px", width: "34rem", height: "9rem" }}>
+                            <Card className="d-flex p-2 m-2"  style={{backgroundColor: "var(--next-white)", border: "3px solid var(--plain-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.01)", borderRadius: "30px", width: "34rem", height: "9rem" }}>
                                 <Row className="m-1">
                                     <Col lg={4} className="d-flex  p-2 justify-content-center align-items-center" style={{ backgroundColor: "var(--custom-white)", width: "10rem", height: "7rem", borderRadius: "22px"}}>
                                         <Package style={{color:"var(--plain-white)", margin: "5px"}} size={95} weight="bold" />
@@ -56,7 +56,7 @@ const Card1 = () => {
                             </Card>
                         </Row>
                         <Row>
-                            <Card className="d-flex p-2 m-2"  style={{backgroundColor: "var(--next-white)", border: "3px solid var(--plain-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "30px", width: "34rem", height: "9rem" }}>
+                            <Card className="d-flex p-2 m-2"  style={{backgroundColor: "var(--next-white)", border: "3px solid var(--plain-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.01)", borderRadius: "30px", width: "34rem", height: "9rem" }}>
                                 <Row className="m-1">
                                     <Col lg={4} className="d-flex  p-2 justify-content-center align-items-center" style={{ backgroundColor: "var(--custom-white)", width: "10rem", height: "7rem", borderRadius: "22px"}}>
                                         <CubeTransparent style={{color:"var(--plain-white)", margin: "5px"}} size={95} weight="bold"  />
@@ -70,16 +70,16 @@ const Card1 = () => {
                                 </Col>
                                 </Row>
                             </Card>
-                            <Card className="d-flex p-2 m-2"  style={{backgroundColor: "var(--next-white)", border: "3px solid var(--plain-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "30px", width: "34rem", height: "9rem" }}>
+                            <Card className="d-flex p-2 m-2"  style={{backgroundColor: "var(--next-white)", border: "3px solid var(--plain-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.01)", borderRadius: "30px", width: "34rem", height: "9rem" }}>
                                 <Row className="m-1">
                                     <Col lg={4} className="d-flex  p-2 justify-content-center align-items-center" style={{ backgroundColor: "var(--custom-white)", width: "10rem", height: "7rem", borderRadius: "22px"}}>
                                         <Cpu style={{color:"var(--plain-white)", margin: "5px"}} size={95} weight="bold"  />
                                     </Col>
                                     <Col lg={8} className="  flex-row p-2" style={{ overflow: 'auto' }}>
-                                        <h1 style={{ fontSize: "20px ", fontWeight: "bold"}}>Cost-effective</h1>
-                                        <h2 style={{ fontSize: "12px ", fontWeight: "semibold"}}>Save Time, Save Money</h2>
+                                        <h1 style={{ fontSize: "20px ", fontWeight: "bold"}}>Integration</h1>
+                                        <h2 style={{ fontSize: "12px ", fontWeight: "semibold"}}>Smooth connectivity</h2>
                                         <p className="text-right" style={{ fontSize: "12px"}}>
-                                            Eliminates the need for physical paperwork and unnecessary visits. This translates to reduced administrative costs and faster turnaround times
+                                            No manual data entry on multiple platforms. MPPS integrates with relevant systems for a smoother user experience and faster processing times.
                                         </p>                        
                                     </Col>
                                 </Row>

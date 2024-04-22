@@ -28,12 +28,9 @@ const Footer = () => {
                     </div>
                 </Col>
                 <Col >
-                    <Row>
-                        <Col>Home</Col>
-                        <Col>Features</Col>
-                        <Col>Products</Col>
-                        <Col>Team</Col>
-                    </Row>
+                    <div className='text-center'>
+                        @MPPS-2024
+                    </div>
                 </Col>
                 <Col className="align-items-center justify-content-center " style={{ display: "flex" }}>
                     <div className="align-items-center justify-content-center ml-5" style={{  }}>
