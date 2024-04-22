@@ -16,7 +16,7 @@ import Col from 'react-bootstrap/Col';
 const Footer = () => {
 
     return(
-        <Container className=" p-5" style={{ backgroundColor: "var(--custom-white)", maxWidth: "100%", height: "10rem", alignItems: 'center' }}>
+        <Container className=" p-4" style={{ backgroundColor: "var(--custom-white)", maxWidth: "100%", height: "8rem", alignItems: 'center' }}>
             <Row className=' d-flex align-items-center '>
                 <Col >
                     <div>

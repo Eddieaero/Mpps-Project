@@ -1,7 +1,7 @@
-// import React from "react";
-// import "./style.css";
+
 import '../../custom-colors.css';
 
+// imported icons
 import { Cpu } from "@phosphor-icons/react";
 import { Package } from "@phosphor-icons/react";
 import { CubeTransparent } from "@phosphor-icons/react";
@@ -11,32 +11,29 @@ import { FingerprintSimple } from "@phosphor-icons/react";
 import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 
+// imported pictures
 import Truck from "../../assets/truckpic.svg";
 
-// import Container from "react-bootstrap/Container";
+// imported react bootstrap components
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 
 const Features = () => {
-
     return(
         <div className="Features">
             <NavBar/>
             <div className="flex  justify-content-center" >
               <Col lg={12} className=" " >
                 <Row className=' '>
-                    {/* <div> */}
-                        <div className="m-5 flex justify-content-center align-items-center d-flex" style={{position: "", width: "90%", height: "20%", borderRadius: "1px", overflow: "hidden" }}>
+                    <div className="m-5 flex justify-content-center align-items-center d-flex" style={{position: "", width: "90%", height: "20%", borderRadius: "1px", overflow: "hidden" }}>
                             <img src={Truck} className='justify-content-center align-items-center'  style={{marginTop: "50px", width: "100%", height: "100%", borderRadius: "30px", objectFit: "cover"}}/>
-                        </div>
-                        <div className='flex m-1 p-2' style={{ position: "absolute",top: "250px",left: "90px", borderRadius: "22px", boxShadow: "-5px 50px 50px rgba(0, 0, 0, 0.1)", backgroundColor: "var(--next-white)", width: "18rem", height: "5.8rem"}}>
-                                <h1 className='p-1' style={{fontSize: "30px", fontWeight: "bold", margin: "0px" }}>Features</h1>
-                                <span className='p-1' style={{fontSize: "20px", fontWeight: "normal"}}>Home/Features</span>
-                        </div>
-                    {/* </div> */}
-                    
-                </Row>
+                    </div>
+                    <div className='flex m-1 p-2' style={{ position: "absolute",top: "250px",left: "90px", borderRadius: "22px", boxShadow: "-5px 50px 50px rgba(0, 0, 0, 0.1)", backgroundColor: "var(--next-white)", width: "18rem", height: "5.8rem"}}>
+                            <h1 className='p-1' style={{fontSize: "30px", fontWeight: "bold", margin: "0px" }}>Features</h1>
+                            <span className='p-1' style={{fontSize: "20px", fontWeight: "normal"}}>Home/Features</span>
+                    </div>
+               </Row>
                 <Row className='m-3 '>
                     <p className=" text-center" style={{fontSize: "40px", fontWeight: "bold"}}>WHY CHOOSE US </p>
                     <div className='m-5 d-flex flex-wrap  justify-space-between align-items-center'>
@@ -89,13 +86,11 @@ const Features = () => {
                             </div>
                         </div>
                     </div>
-                    
-                </Row>
+                 </Row>
               </Col>  
             </div>
             <Footer/>
         </div>
     )
 }
-
 export default Features

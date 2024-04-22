@@ -27,7 +27,7 @@ const Application = () => {
                 <SideNavBar/>
             </div>
             <div className='flex p-5' style={{borderRadius: "30px", margin: "100px 100px 100px 100px ",backgroundColor: "var(--custom-white)",width: "80%", height: "100%"}}>
-                <h2>Transit Pass Application Form</h2>
+                <h2 style={{fontSize: "30px", fontWeight: "bold" }}>Transit Pass Application Form</h2>
                 <p>Fill the form with all information for your route details</p>
                 <Row>
                     <Form className='d-flex'>

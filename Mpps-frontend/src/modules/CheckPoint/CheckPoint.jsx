@@ -28,7 +28,7 @@ const Checkpoint = () => {
                 <Col lg={4}>
                     <Row>
                         <div>
-                            <h1 style={{fontSize: "25px", fontWeight: "bold" }}>Route Details</h1>
+                            <h2 style={{fontSize: "30px", fontWeight: "bold" }}>Route Details</h2>
                             <p>See the number and names of checkpoint along the way from the starting point to the destination of the your route</p>
                         </div>
                         <div className='p-2' style={{border: "2px solid var(--darkish-green)", borderRadius: "14px"}}>

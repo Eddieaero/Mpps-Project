@@ -35,7 +35,7 @@
 
 
       return(
-        <Navbar className='p-3 mb-5 ' style={{backgroundColor: 'var(--custom-white )', boxShadow: 'none' }} data-bs-theme="light">
+        <Navbar className='p-3 mb-5 ' style={{backgroundColor: 'var(--next-white )', boxShadow: 'none' }} data-bs-theme="light">
           <Container >
             <Navbar.Brand href="/">
               <img
@@ -67,7 +67,7 @@
             </div>
             }
             
-            
+
 
           </Container>
         </Navbar>

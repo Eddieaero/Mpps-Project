@@ -26,7 +26,7 @@ const Home = () =>{
 
             <HeroSection/>
             
-            <Container className=' mt-3 mb-3  '  style={{ backgroundColor: "var(--next-white)", margin: " ",  maxWidth: "78rem",  borderRadius: "35px" }}>
+            <Container className=' mt-3 mb-3  '  style={{boxShadow: "5px -2px 50px rgba(0, 0, 0, 0.05)", border: "0px solid var(--custom-white)", backgroundColor: "var(--next-white)", margin: " ",  maxWidth: "78rem",  borderRadius: "35px" }}>
                 <Card1/>
                 <Card2/>
                 <Card3/>

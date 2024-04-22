@@ -46,7 +46,7 @@ const Team = () => {
                                 <div  style={{ position: "absolute", width: "8rem", height: "8rem", borderRadius: "50%", overflow: "hidden" }}>
                                     <img  src={hellen} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/>
                                 </div>
-                                <div className='m-3 ' style={{backgroundColor: "var(--plain-white)", width: "20rem", height: "15rem", boxShadow: "5px -50px -50px rgba(0, 0, 0, 0.02)", borderRadius: "30px"}}>
+                                <div className='m-3 ' style={{backgroundColor: "var(--plain-white)", width: "20rem", height: "10rem", boxShadow: "5px -50px -50px rgba(0, 0, 0, 0.02)", borderRadius: "30px"}}>
                                     <div className=' p-2' style={{backgroundColor: "var(--darkish-green)", borderRadius: "30px 30px 0px 30px"}}>
                                     <h2 className='m-2 text-end' style={{ color: "var(--whitish-green)", fontSize: "25px"}}>
                                         Hellen Mziray
@@ -62,7 +62,7 @@ const Team = () => {
                                 <div  style={{ position: "absolute", width: "8rem", height: "8rem", borderRadius: "50%", overflow: "hidden" }}>
                                     <img  src={hellen} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/>
                                 </div>
-                                <div className='m-3 ' style={{backgroundColor: "var(--plain-white)", width: "20rem", height: "15rem", boxShadow: "5px -50px -50px rgba(0, 0, 0, 0.02)", borderRadius: "30px"}}>
+                                <div className='m-3 ' style={{backgroundColor: "var(--plain-white)", width: "20rem", height: "10rem", boxShadow: "5px -50px -50px rgba(0, 0, 0, 0.02)", borderRadius: "30px"}}>
                                     <div className=' p-2' style={{backgroundColor: "var(--darkish-green)", borderRadius: "30px 30px 0px 30px"}}>
                                     <h2 className='m-2 text-end' style={{ color: "var(--whitish-green)", fontSize: "25px"}}>
                                         Hellen Mziray
@@ -78,7 +78,7 @@ const Team = () => {
                                 <div  style={{ position: "absolute", width: "8rem", height: "8rem", borderRadius: "50%", overflow: "hidden" }}>
                                     <img  src={hellen} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/>
                                 </div>
-                                <div className='m-3 ' style={{backgroundColor: "var(--plain-white)", width: "20rem", height: "15rem", boxShadow: "5px -50px -50px rgba(0, 0, 0, 0.02)", borderRadius: "30px"}}>
+                                <div className='m-3 ' style={{backgroundColor: "var(--plain-white)", width: "20rem", height: "10rem", boxShadow: "5px -50px -50px rgba(0, 0, 0, 0.02)", borderRadius: "30px"}}>
                                     <div className=' p-2' style={{backgroundColor: "var(--darkish-green)", borderRadius: "30px 30px 0px 30px"}}>
                                     <h2 className='m-2 text-end' style={{ color: "var(--whitish-green)", fontSize: "25px"}}>
                                         Hellen Mziray

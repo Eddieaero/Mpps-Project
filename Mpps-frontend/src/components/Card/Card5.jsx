@@ -22,7 +22,7 @@ const Card5 = () => {
                         <p className=" d-flex justify-content-center text-center " style={{ fontSize: "12px", fontWeight: "normal" }}>Remember everything form your first to last delivery</p>
                     </div>
                     <div className= "d-flex  justify-content-center   ">
-                        <Card className= " justify-content-center " style={{ border: "3px solid var(--plain-white)", backgroundColor: "var(--next-white)", boxShadow: "5px 50px 50px rgba(0, 0, 0, 0.1)", borderRadius: "22px", width: "65rem", height: "20rem"}}>
+                        <Card className= " justify-content-center " style={{ border: "3px solid var(--plain-white)", backgroundColor: "var(--next-white)", boxShadow: "5px 30px 50px rgba(0, 0, 0, 0.02)", borderRadius: "22px", width: "65rem", height: "20rem"}}>
                             <Row className='p-5 '>
                                 <Col className='p-3 mt-3' lg={7}> 
                                     <div >
