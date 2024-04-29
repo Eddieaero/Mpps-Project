@@ -22,38 +22,17 @@ import  { SideBarData } from './SideBarData';
 
 
 const SideNavBar = () => {
-
-
-    
-        const [activeItem, setActiveItem] = useState(null);
-        const [isExpanded, setIsExpanded] = useState(false);
-        const [sidebarWidth, setSidebarWidth] = useState('80px');
-        const [navItemWidth, setnavItemWidth] = useState("0px");
-        // const [sidebar, setSidebar] = useState(false);
-        // const showSidebar= () => setSidebar(!sidebar)
-      
-        // const handleItemClick = (itemId) => {
-        //   setActiveItem(itemId === activeItem ? null : itemId);
-        // };
-      
-
-    // const NavItems = [
-    //     {path: '/', link: 'Dashboard'},
-    //     {path: '/Application', link: 'Application'},
-    //     {path: '/Verify', link: 'Verify'},
-    //     {path: '/Checkpoint', link: 'Checkpoint'}
-    // ]
+const [activeItem, setActiveItem] = useState(null);
+const [isExpanded, setIsExpanded] = useState(false);
+const [sidebarWidth, setSidebarWidth] = useState('80px');
+const [navItemWidth, setnavItemWidth] = useState("0px");
 
     return(
         <div className="flex-column d-flex " >
-            
-            {/* <nav className={ sidebar ? 'nav-menu active' : 'nav-menu'}> */}
-            {/* <Navbar bg="light" expand="lg" fixed="left" className="me-auto  container-fluid flex-column " style={{width: "80px", height: "100%"}}> */}
             <Navbar bg="light" expand="lg" fixed="left" className="me-auto  container-fluid flex-column " style={{width: sidebarWidth, height: "100%"}} >
             <div 
                 className={`sidebar ${isExpanded ? 'expanded ' : ''}`} 
             >
-                {/* <Navbar.Brand href="#"> */}
               <Col className="m-2">
               <div>
               <img

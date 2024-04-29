@@ -109,29 +109,11 @@ const Checkpoint = () => {
                                     <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
                                 </Row>
                             </div>
-                            <div className='m-2 p-2 justify-content-center  '  style={{width: "5.625rem", height: "5.625rem", borderRadius: "14px", backgroundColor: "var(--darkish-green)"}}>
-                                <Row className='m-1'>
-                                    <MapPin className=' ' size={35} color="var(--whitish-green)" weight="bold" />
-                                </Row>
-                                <Row>
-                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
-                                </Row>
-                            </div>
-                            <div className='m-2 p-2 justify-content-center  '  style={{width: "5.625rem", height: "5.625rem", borderRadius: "14px", backgroundColor: "var(--darkish-green)"}}>
-                                <Row className='m-1'>
-                                    <MapPin className=' ' size={35} color="var(--whitish-green)" weight="bold" />
-                                </Row>
-                                <Row>
-                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
-                                </Row>
-                            </div>
-                            
-                        </div>
-                        
+                         </div>
                     </Row>
                 </Col>
-                <Col lg={8}>
-                    <div>
+                <Col lg={8} className=''>
+                    <div className='' style={{borderRadius: "14px", overflow: "hidden"}}>
                         <Map/>
                     </div>
                 </Col>

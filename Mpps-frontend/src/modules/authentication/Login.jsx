@@ -94,7 +94,7 @@ const Login = () => {
                             </div>
                             <div className='d-flex align-items-center justify-content-center'>
                                 <p className='m-2'>you don't have an account?</p>
-                                <NavLink className='' style={{ textDecoration: "none ", color: "var(--light-green) ",borderRadius: "5px", border: " 0px solid var(--whitish-green)"}} to="/Signup"> 
+                                <NavLink className='' style={{ textDecoration: "none ", color: "var(--light-green) ",borderRadius: "5px", border: " 0px solid var(--whitish-green)"}} to="/user/Signup"> 
                                     Go to sign up
                                     <ArrowRight className='m-1' size={25} weight="bold" />
                                 </NavLink>

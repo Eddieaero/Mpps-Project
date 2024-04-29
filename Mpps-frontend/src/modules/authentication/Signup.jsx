@@ -18,6 +18,13 @@ import Col from "react-bootstrap/Col"
 import bgpic from "../../assets/pine ui background.svg";
 import {ArrowRight} from "@phosphor-icons/react";
 
+
+
+
+
+
+
+
 const Signup = () => {
 
     return(
@@ -90,7 +97,7 @@ const Signup = () => {
                         </div>
                         <div className='d-flex align-items-center justify-content-center'>
                                 <p className='m-2'>Already have an account?</p>
-                                <NavLink className='' style={{ textDecoration: "none ", color: "var(--light-green) ",borderRadius: "5px", border: " 0px solid var(--whitish-green)"}} to="/Login"> 
+                                <NavLink className='' style={{ textDecoration: "none ", color: "var(--light-green) ",borderRadius: "5px", border: " 0px solid var(--whitish-green)"}} to="/user/login"> 
                                     Go to Login
                                     <ArrowRight className='m-1' size={25} weight="bold" />
                                 </NavLink>

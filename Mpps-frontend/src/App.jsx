@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './modules/Login/Login';
-import Signup from './modules/Signup/Signup';
+import Login from './modules/authentication/Login';
+import Signup from './modules/authentication/Signup';
 import Home from './modules/Home/Home';
 import Features from './modules/Features/Features';
 import Products from './modules/Products/Products';
@@ -29,8 +29,8 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login/>} />
-        <Route path='/Signup' element={<Signup/>}/>
+        <Route path="/user/login" element={<Login/>} />
+        <Route path='/user/Signup' element={<Signup/>}/>
         <Route path='/' element={<Home/>}/>
         <Route path='/features' element={<Features/>}/>
         <Route path='/products' element={<Products/>}/>

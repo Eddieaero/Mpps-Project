@@ -59,10 +59,10 @@
               <div className="">
               
               <Button className="" style={{  border: " 2px solid var(--whitish-green)", backgroundColor: "var(--plain-white)", color: "var(--primary-green)" }} >
-                  <NavLink style={{   color: "var(--primary-green)" }} to="/login">Login</NavLink>
+                  <NavLink style={{   color: "var(--primary-green)" }} to="/user/login">Login</NavLink>
               </Button>
               <Button className=" m-2"  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
-                  <NavLink style={{   color: "var(--plain-black)"  }} to="/signup">Sign Up</NavLink>
+                  <NavLink style={{   color: "var(--plain-black)"  }} to="/user/Signup">Sign Up</NavLink>
               </Button>
             </div>
             }
