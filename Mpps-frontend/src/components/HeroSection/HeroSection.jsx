@@ -16,6 +16,7 @@ import  Row  from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 // import Card from "react-bootstrap/Card";  
 import Button from "react-bootstrap/Button"; 
+import { NavLink } from "react-router-dom";
 
 
 
@@ -45,7 +46,7 @@ const HeroSection = () => {
                         <div className="justify-content-center " style={{ borderRadius: "50px", backgroundColor: "var(--whitish-green)", width: "300px", height: "55px"}}>
                             <div className="m-3">
                                 <Button className="HeroText3   " style={{ borderRadius: "50px", border: " 2px solid var(--primary-green)", backgroundColor: "var(--darkish-green)", color: "var(--whitish-green)", height: "38px"}}>
-                                    Apply now <ArrowRight size={25} weight="bold" />
+                                    <NavLink style={{ backgroundColor: "inherit", textDecoration: "none",fontWeight: "bold",  padding: "0px", margin: "0px", border: "none", color: "var(--whitish-green)"  }} to='/user/login'>Apply now</NavLink> <ArrowRight size={25} weight="bold" />
                                 </Button>
                                 <Button className="HeroText4  m-2 " style={{ borderRadius: "50px", border: " 2px solid var(--darkish-green)", backgroundColor: "var(--plain-white)", color: "var(--darkish-green)", height: "38px"}}>
                                     See details

@@ -81,7 +81,7 @@ const Verify = () => {
 
                 </Row>
             </div>
-            <FooterSpe/>
+            {/* <FooterSpe/> */}
         </div>
     )
 }

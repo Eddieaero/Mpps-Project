@@ -7,8 +7,9 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/NavBar/NavBar";
 
 
-// import Eddie from  "../../assets/20221223_125407_remastered.jpg";
+import Eddie from  "../../assets/20221223_125407_remastered.jpg";
 import hellen from  "../../assets/hellen.jpg";
+import George from  "../../assets/george mollel.jpg";
 
 import Dashboardline from "../../assets/dashboardLine.svg";
 
@@ -60,12 +61,12 @@ const Team = () => {
                             </Col>
                             <Col className='justify-content-center'>
                                 <div  style={{ position: "absolute", width: "8rem", height: "8rem", borderRadius: "50%", overflow: "hidden" }}>
-                                    <img  src={hellen} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/>
+                                    <img  src={Eddie} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/>
                                 </div>
                                 <div className='m-3 ' style={{backgroundColor: "var(--plain-white)", width: "20rem", height: "10rem", boxShadow: "5px -50px -50px rgba(0, 0, 0, 0.02)", borderRadius: "30px"}}>
                                     <div className=' p-2' style={{backgroundColor: "var(--darkish-green)", borderRadius: "30px 30px 0px 30px"}}>
                                     <h2 className='m-2 text-end' style={{ color: "var(--whitish-green)", fontSize: "25px"}}>
-                                        Hellen Mziray
+                                        Edson Kuzengwa
                                      </h2>
                                      <h3 className=' text-end' style={{color: "var(--whitish-green)", fontSize: "20px"}}>Software designer</h3>
                                      {/* <h3 className='m-2 p-0 text-end'>designer </h3> */}
@@ -76,12 +77,12 @@ const Team = () => {
                             </Col>
                             <Col className='justify-content-center'>
                                 <div  style={{ position: "absolute", width: "8rem", height: "8rem", borderRadius: "50%", overflow: "hidden" }}>
-                                    <img  src={hellen} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/>
+                                    <img  src={George} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/>
                                 </div>
                                 <div className='m-3 ' style={{backgroundColor: "var(--plain-white)", width: "20rem", height: "10rem", boxShadow: "5px -50px -50px rgba(0, 0, 0, 0.02)", borderRadius: "30px"}}>
                                     <div className=' p-2' style={{backgroundColor: "var(--darkish-green)", borderRadius: "30px 30px 0px 30px"}}>
                                     <h2 className='m-2 text-end' style={{ color: "var(--whitish-green)", fontSize: "25px"}}>
-                                        Hellen Mziray
+                                        George Mollel
                                      </h2>
                                      <h3 className=' text-end' style={{color: "var(--whitish-green)", fontSize: "20px"}}>Software designer</h3>
                                      {/* <h3 className='m-2 p-0 text-end'>designer </h3> */}

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 
 // import Footer from "../../components/Footer/Footer";
 import FooterSpe from "../../components/Footer/FooterSpe";
@@ -17,45 +17,81 @@ import Col from "react-bootstrap/Col"
 
 
 import bgpic from "../../assets/pine ui background.svg";
+// import {ArrowRight, Copy} from "@phosphor-icons/react";
 import {ArrowRight} from "@phosphor-icons/react";
-
-
-
-
-
 
 
 
 const Signup = () => {
 
+    const [first_name, setFirstName] = useState();
+    const [last_name, setSecondName] = useState();
+    const [company_name, setCompanyName] = useState();
+    const [address, setAddress] = useState();
+    const [email, setEmail] = useState();
+    const [phone_number, setPhoneNumber] = useState();
+    const [password, setPassword] = useState(); 
 
 
-    const [formData, setFormData] = useState({
-        first_name: '',
-        second_name: '',
-        company_name: '',
-        address: '',
-        email: '',
-        phone_number: '',
-        password1: '',
-        password2: '',
-        is_admin: false,
-    });
+    console.log(first_name, last_name, company_name, address, email, phone_number, password)
 
-    const handleChange = (e) => {
-        setFormData({...formData, [e.target.name]: e.target.value});
-    };
 
-    const handleSubmit = (e) => {
+    // const [formData, setFormData] = useState({
+    //     first_name: '',
+    //     second_name: '',
+    //     company_name: '',
+    //     address: '',
+    //     email: '',
+    //     phone_number: '',
+    //     password: '',
+    //     is_admin: false,
+    // });
+    // console.log(formData);
+
+    // const handlePasswordChange = (e) => {
+    //     // handleChange(e);
+    //     confirmPassword(e);
+    // };
+
+    // const handleChange = (e) => {
+    //     setFormData({...formData, [e.target.name]: e.target.value});
+    // };
+
+
+    // const confirmPassword = (e) => {
+    //     if (e.target.name === 'password' || e.target.name === 'confirmPassword') {
+    //         if (formData.password !== formData.confirmPassword) {
+    //             console.error('Passwords do not match');
+    //         }
+    //     }
+    // }
+
+    const handleSubmit = async (e) => { // Make handleSubmit async
         e.preventDefault();
-        axios.post('/api/register/', formData)
-            .then(response => {
-                // response.data.data.formData.value;
-                console.log(response.data.data.formData.value);
-                history.push('/user/login');  // Redirect to login page
-            })
-            .catch(error => console.error(error));
-    };
+    
+        // const formData = new FormData(e.target); // Replace with your form selector if needed
+    
+        try {
+          const response = await axios.post('http://192.168.1.198:8000/MppsUser/register/', {
+            first_name,
+            last_name,
+            email,
+            address,
+            company_name,
+            phone_number,
+            password
+          }, {
+            headers: {
+              'Content-Type': 'application/json' // Set appropriate content type for FormData
+            }
+          });
+    
+          console.log('Registration successful:', response.data); // Log response data for debugging
+          Navigate.push('/authentication/Login'); // Redirect to login page
+        } catch (error) {
+          console.error('Registration error:', error.response?.data || error.message); // Handle errors
+        }
+      };
 
     return(
         <div>
@@ -74,52 +110,101 @@ const Signup = () => {
                             <Col>
                               <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>First name</Form.Label>
-                                <Form.Control type="text" placeholder="John"  required onChange={handleChange} />
+                                <Form.Control 
+                                    type="text" 
+                                    placeholder="John"  
+                                    required 
+                                    value={first_name} 
+                                    onChange={e => setFirstName(e.target.value)} 
+                                    />
                               </Form.Group>
                             </Col>
                             <Col>
                               <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Last name</Form.Label>
-                                <Form.Control type="text" placeholder="Doe"  required onChange={handleChange} />
+                                <Form.Control 
+                                    type="text" 
+                                    placeholder="John"  
+                                    required 
+                                    value={last_name} 
+                                    onChange={e => setSecondName(e.target.value)} 
+                                    />
                               </Form.Group>
                             </Col>
                         </Row>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Company name</Form.Label>
-                            <Form.Control type="text" placeholder="" required onChange={handleChange}/>
-                        </Form.Group> 
+                            <Form.Control 
+                                type="text" 
+                                placeholder="John"  
+                                required 
+                                value={company_name} 
+                                onChange={e => setCompanyName(e.target.value)} 
+                                />
+                                                        </Form.Group> 
 
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Address</Form.Label>
-                            <Form.Control type="text" placeholder="" required onChange={handleChange}/>
-                        </Form.Group>
+                                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                            <Form.Label>Address</Form.Label>
+                                                            <Form.Control 
+                                type="text" 
+                                placeholder="John"  
+                                required 
+                                value={address} 
+                                onChange={e => setAddress(e.target.value)} 
+                                />
+                                                        </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" placeholder="" required onChange={handleChange}/>
-                        </Form.Group> 
-                    </Col>
-                    <Col>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Phone number</Form.Label>
-                            <Form.Control type="number" placeholder="" required onChange={handleChange}/>
-                        </Form.Group> 
+                                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                            <Form.Label>Email</Form.Label>
+                                                            <Form.Control 
+                                type="text" 
+                                placeholder="John"  
+                                required 
+                                value={email} 
+                                onChange={e => setEmail(e.target.value)} 
+                                />
+                                                        </Form.Group>
+                                                    </Col>
+                                                    <Col>
+                                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                        <Form.Label>Phone number</Form.Label>
+                                                        <Form.Control 
+                                type="text" 
+                                placeholder="John"  
+                                required 
+                                value={phone_number} 
+                                onChange={e => setPhoneNumber(e.target.value)} 
+                                />
+                    </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="" required onChange={handleChange}/>
-                        </Form.Group> 
+                            <Form.Control 
+                            type="text" 
+                            placeholder="John"  
+                            required 
+                            value={password} 
+                            onChange={e => setPassword(e.target.value)} 
+                            />
+                        </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Confirm Password</Form.Label>
-                            <Form.Control type="password" placeholder="" required onChange={handleChange}/>
+                            <Form.Control 
+                                type="password" 
+                                placeholder="" 
+                                required 
+                                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$" 
+                                // onChange={handlePasswordChange}
+                            />
                         </Form.Group>
 
                         <div>
                         <div className="d-flex align-items-center justify-content-center">
                             <Button type="submit" className=" myButton m-2 align-items-center justify-content-center "  style={{ height: "35px", width: "80px", border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
                                     <p className='text-center' style={{   color: "var(--plain-black)", textDecoration: 'none'  }} > Submit </p>
+                                    
                             </Button>
                         </div>
                         <div className='d-flex align-items-center justify-content-center'>

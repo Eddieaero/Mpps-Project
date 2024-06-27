@@ -1,9 +1,11 @@
-// import React from "react";
+import useNavigate from "react";
 // import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+// import { removeToken } from './modules/authentication/TokenUtils';
+import { removeToken } from './../authentication/TokenUtils';
 
 import '../../custom-colors.css';
 import '../../App.css'; 
-
 // import Footer from "../../components/Footer/Footer";
 import FooterSpe from "../../components/Footer/FooterSpe";
 
@@ -22,6 +24,20 @@ import { TreePalm, Leaf, Tree, TreeEvergreen, ArrowRight,MapPin,CalendarX,SealWa
 
 
 const Dashboard = () => {
+
+
+
+    const logoutUser = async () => {
+        try {
+            await axios.post('/api/logout/');
+            removeToken();
+            // Redirect to the home page
+            const navigate = useNavigate();
+            navigate('/'); // Change the URL to your home page URL
+        } catch (error) {
+            throw error.response.data;
+        }
+    };
 
     return(
         <div className='d-flex flex-column'>
@@ -73,7 +89,7 @@ const Dashboard = () => {
                                             </Col>
                                             <Col className='m-0'>
                                                 <span className=' flex justify-content-center align-items-center text-center' style={{  display: 'flex',  color: "--custom-grey-100", backgroundColor: 'var(--whitish-green)', width: '2rem', height: '2rem', borderRadius: "100px" }}>
-                                                    <p className='m-2' style={{ fontSize: "25px", fontWeight: "bold"}}>5</p>
+                                                    <p className='m-2' style={{ fontSize: "25px", fontWeight: "bold"}}>0</p>
                                                 </span>
                                             </Col>
                                         </Row>
@@ -89,7 +105,8 @@ const Dashboard = () => {
                                         <Row className='p-2'>
                                             <Col className='m-0 text-center '>
                                                 <h2 style={{ color: "var(--whitish-green)", fontSize: "18px", fontWeight: "bold"}}>TP-Deadline</h2>
-                                                <h2 style={{ color: "var(--whitish-green)", fontSize: "15px", fontWeight: "normal"}}>Date: 6 May 2024</h2>
+                                                {/* <h2 style={{ color: "var(--whitish-green)", fontSize: "15px", fontWeight: "normal"}}>Date: 6 May 2024</h2> */}
+                                                <h2 style={{ color: "var(--whitish-green)", fontSize: "15px", fontWeight: "normal"}}> - - </h2>
                                             </Col>
                                         </Row>
                                             
@@ -140,8 +157,14 @@ const Dashboard = () => {
                                         </div>
                                         <div>
                                             <Col className='m-1 p-1  text-center '>
-                                                <h2 style={{ color: "var(--whitish-green)", fontSize: "18px", fontWeight: "bold"}}>Log out </h2>
-                                                <h2 style={{ color: "var(--whitish-green)", fontSize: "15px", fontWeight: "normal"}}>Back to home</h2>
+                                                <h2 style={{ color: "var(--whitish-green)", fontSize: "18px", fontWeight: "bold"}}>
+                                                    <button style={{ backgroundColor: "inherit", textDecoration: "none",fontWeight: "bold",  padding: "0px", margin: "0px", border: "none", color: "var(--whitish-green)"  }} onClick={logoutUser}>
+                                                        Log out
+                                                    </button>
+                                                </h2>
+                                                <h2 style={{ color: "var(--whitish-green)", fontSize: "15px", fontWeight: "normal"}}>
+                                                    Back to home
+                                                </h2>
                                             </Col>
                                         </div>
                             </div>
@@ -152,7 +175,7 @@ const Dashboard = () => {
                                     </Col>
                                     <Col lg={2} className=' align-items-center'>
                                         <span className=' flex justify-content-center align-items-center text-center' style={{  display: 'flex',  color: "--custom-grey-100", backgroundColor: 'var(--whitish-green)', width: '2rem', height: '2rem', borderRadius: "100px" }}>
-                                            <p className='m-2' style={{ fontSize: "25px", fontWeight: "bold"}}>5</p>
+                                            <p className='m-2' style={{ fontSize: "25px", fontWeight: "bold"}}>0</p>
                                         </span>
                                     </Col>
                                 </Row>

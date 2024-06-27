@@ -14,7 +14,7 @@ import Card from 'react-bootstrap/Card';
 
 import Eddie from  "../../assets/20221223_125407_remastered.jpg";
 import hellen from  "../../assets/hellen.jpg";
-// import george from  "../../assets/george.jpg";
+import George from  "../../assets/george mollel.jpg";
 
 
 const Card3 = () => {
@@ -42,7 +42,7 @@ const Card3 = () => {
                                 <p style={{ fontWeight: "normal", color: "var(--darkish-green)", fontSize: "15px"}}> Software Developer </p>
                             </Col>
                             <Col className='d-flex flex-column align-items-center justify-content-center p-5 m-2'>
-                                <div className='m-1' style={{ width: "9.8rem", height: "9.8rem", borderRadius: "50%", overflow: "hidden" }}> <img  src={Eddie} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/> </div>
+                                <div className='m-1' style={{ width: "9.8rem", height: "9.8rem", borderRadius: "50%", overflow: "hidden" }}> <img  src={George} alt="" className="  " style={{ width: "100%", height: "100%", objectFit: "cover"}}/> </div>
                                 <h1 style={{ fontWeight: "bold", color: "var(--darkish-green)", fontSize: "20px"}}> George Mollel</h1>
                                 <p style={{ fontWeight: "normal", color: "var(--darkish-green)", fontSize: "15px"}}> Software Developer </p>
                             </Col>

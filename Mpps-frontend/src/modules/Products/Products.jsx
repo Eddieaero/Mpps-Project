@@ -41,7 +41,7 @@ const Products = () => {
                             <span className='m-0  ' style={{ fontWeight: "bold", color: "var(--whitish-green)", fontSize: "11px"}}>Soft wood</span>
                         </Col>
                         <Col lg={10} className='text-start  p-4'>
-                            <p>tree palm</p>
+                            <p>wood pile</p>
                         </Col>
                     </Row>
                     <Row className='p-2 m-2 d-flex flex ' style={{backgroundColor: "var(--plain-white)", borderRadius: "22px"}}>
@@ -50,7 +50,7 @@ const Products = () => {
                             <span className='m-0  ' style={{ fontWeight: "bold", color: "var(--whitish-green)", fontSize: "11px"}}>Soft wood</span>
                         </Col>
                         <Col lg={10} className='text-start  p-4'>
-                            <p>tree palm</p>
+                            <p>timber</p>
                         </Col>
                     </Row>
                     <Row className='p-2 m-2 d-flex flex ' style={{backgroundColor: "var(--plain-white)", borderRadius: "22px"}}>
@@ -59,7 +59,7 @@ const Products = () => {
                             <span className='m-0  ' style={{ fontWeight: "bold", color: "var(--whitish-green)", fontSize: "11px"}}>Soft wood</span>
                         </Col>
                         <Col lg={10} className='text-start  p-4'>
-                            <p>tree palm</p>
+                            <p>soft wood</p>
                         </Col>
                     </Row>
                     <Row className='p-2 m-2 d-flex flex ' style={{backgroundColor: "var(--plain-white)", borderRadius: "22px"}}>
@@ -68,7 +68,7 @@ const Products = () => {
                             <span className='m-0  ' style={{ fontWeight: "bold", color: "var(--whitish-green)", fontSize: "11px"}}>Soft wood</span>
                         </Col>
                         <Col lg={10} className='text-start  p-4'>
-                            <p>tree palm</p>
+                            <p>hard wood</p>
                         </Col>
                     </Row>
                  </Row>

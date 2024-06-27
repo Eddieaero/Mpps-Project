@@ -66,7 +66,7 @@ const Checkpoint = () => {
                                     <MapPin className=' ' size={35} color="var(--whitish-green)" weight="bold" />
                                 </Row>
                                 <Row>
-                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
+                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Mafinga</p>
                                 </Row>
                             </div>
                             <div className='m-2 p-2 justify-content-center  '  style={{width: "5.625rem", height: "5.625rem", borderRadius: "14px", backgroundColor: "var(--darkish-green)"}}>
@@ -74,7 +74,7 @@ const Checkpoint = () => {
                                     <MapPin className=' ' size={35} color="var(--whitish-green)" weight="bold" />
                                 </Row>
                                 <Row>
-                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
+                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Makwawa</p>
                                 </Row>
                             </div>
                             <div className='m-2 p-2 justify-content-center  '  style={{width: "5.625rem", height: "5.625rem", borderRadius: "14px", backgroundColor: "var(--darkish-green)"}}>
@@ -82,7 +82,7 @@ const Checkpoint = () => {
                                     <MapPin className=' ' size={35} color="var(--whitish-green)" weight="bold" />
                                 </Row>
                                 <Row>
-                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
+                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Ilula</p>
                                 </Row>
                             </div>
                             <div className='m-2 p-2 justify-content-center  '  style={{width: "5.625rem", height: "5.625rem", borderRadius: "14px", backgroundColor: "var(--darkish-green)"}}>
@@ -90,7 +90,7 @@ const Checkpoint = () => {
                                     <MapPin className=' ' size={35} color="var(--whitish-green)" weight="bold" />
                                 </Row>
                                 <Row>
-                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
+                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Sangasanga</p>
                                 </Row>
                             </div>
                             <div className='m-2 p-2 justify-content-center  '  style={{width: "5.625rem", height: "5.625rem", borderRadius: "14px", backgroundColor: "var(--darkish-green)"}}>
@@ -98,7 +98,7 @@ const Checkpoint = () => {
                                     <MapPin className=' ' size={35} color="var(--whitish-green)" weight="bold" />
                                 </Row>
                                 <Row>
-                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
+                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Kese</p>
                                 </Row>
                             </div>
                             <div className='m-2 p-2 justify-content-center  '  style={{width: "5.625rem", height: "5.625rem", borderRadius: "14px", backgroundColor: "var(--darkish-green)"}}>
@@ -106,7 +106,7 @@ const Checkpoint = () => {
                                     <MapPin className=' ' size={35} color="var(--whitish-green)" weight="bold" />
                                 </Row>
                                 <Row>
-                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Morogoro</p>
+                                    <p className=' text-center' style={{color: "var(--whitish-green)"}}>Chalinze</p>
                                 </Row>
                             </div>
                          </div>

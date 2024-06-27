@@ -50,10 +50,10 @@ const Payment = () => {
                                     <p style={{color: "var(--whitish-green)", fontWeight: "bold", fontSize: "25px"}}>Total</p>
                                 </Col>
                                 <Col className='text-end ' style={{fontWeight: "bold"}}>
-                                    <p>68,000/=</p>
-                                    <p>68,000/=</p>
-                                    <p>68,000/=</p>
-                                    <p style={{color: "var(--whitish-green)", fontWeight: "bold", fontSize: "25px"}}>68,000/=</p>
+                                    <p>15,000/=</p>
+                                    <p> - - </p>
+                                    <p> - - </p>
+                                    <p style={{color: "var(--whitish-green)", fontWeight: "bold", fontSize: "25px"}}>15,000/=</p>
                                 </Col>
                             </Row>
                         </Col>
@@ -74,7 +74,7 @@ const Payment = () => {
                             <Col className='text-center'>21 May 2024</Col>
                             <Col className='text-center'>Dar - Iringa</Col>
                             <Col className='text-center'>9990907787665</Col>
-                            <Col className='text-center'>68,000</Col>
+                            <Col className='text-center'>15,000</Col>
                             <Col className='text-center'>Paid</Col>
                         </Row>
                         

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 // import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
-import { Post } from 'react-axios';
+import axios from 'axios';
 
 import '../../custom-colors.css';
 import '../../App.css'; 
@@ -27,15 +27,23 @@ import {ArrowRight} from "@phosphor-icons/react";
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
 
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
       
         const { email, password } = formData;
       
         try {
-          const response = await axios.post('/api/login', { email, password }); // Replace with your backend API endpoint
+          // Get CSRF token from Django
+          const csrfToken = document.cookie.split('; ').find(row => row.startsWith('csrftoken')).split('=')[1];
+
+          // Set CSRF token in the headers of axios
+          axios.defaults.headers.post['X-CSRFToken'] = csrfToken;
+          const response = await axios.post('/api/login', { email, password }); 
           // Handle successful login (explained in next steps)
           console.log('Login successful:', response.data); // Example: log response for demonstration
+          // Store token in session storage
+          sessionStorage.setItem('token', response.data.token);
         } catch (error) {
           console.error('Login failed:', error.response.data); // Example: log error for demonstration
           // Handle login error (explained in next steps)
@@ -58,7 +66,7 @@ const Login = () => {
                     <Col>
                         <Card className="m-3 border-0 bg-transparent" border=''>
                             <h1 className='text-center'>Login</h1>
-                        <Form>
+                        <Form onSubmit={handleSubmit}>
                             
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
@@ -87,8 +95,8 @@ const Login = () => {
                                 Submit
                             </Button> */}
                             <div className='d-flex align-items-center justify-content-center'>
-                                <Button type='submit' className=" myButton m-1 align-items-center justify-content-center "  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
-                                    <NavLink style={{   color: "var(--plain-black)", textDecoration: 'none'  }} to="/Dashboard"> Submit </NavLink>
+                                <Button type='submit'  className=" myButton m-1 align-items-center justify-content-center "  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
+                                    <NavLink to="/Dashboard" style={{   color: "var(--plain-black)", textDecoration: 'none'   }} >submit </NavLink>
                                     {/* Submit */}
                                 </Button>
                             </div>
