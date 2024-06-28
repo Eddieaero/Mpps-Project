@@ -1,18 +1,16 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 import {useState, useEffect } from "react";
+// import { formData } from "../..modules/Application/Application";
 // import {useRef } from "react";
 // import checkpoints from "./checkpoint.json";
 // import Checkpoints from "Checkpoints.jsx";
 // import { Route } from "express";
 // import Map from "react-map-gl";
 // import RoutePlanning from "RoutePlanning.jsx";
-
-
-
-
 import React from "react";
 import {  useRef } from "react";
 import Map, { Source, Layer, NavigationControl, FullscreenControl } from "react-map-gl";
+// import Application from "../Application/Application";
 
 
 

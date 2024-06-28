@@ -11,6 +11,11 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from 'react-bootstrap/esm/Button';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+// import { useDispatch, useSelector } from 'react-redux';
+// import { setFormData } from '../../controllers/Store.jsx'; 
+
 
 
 
@@ -27,38 +32,90 @@ const toggleWoodType = (woodType) => {
         setExpandedWoodType(woodType); // Expand if collapsed
     }
 }    
+const [driverName, setDriverName] = useState('');
 const [startDate, setStartDate] = useState(new Date());
+const [phoneNumber, setPhoneNumber] = useState('');
+const [vehicleNumber, setVehicleNumber] = useState('');
 const [destinations, setDestinations] = useState([]);
 const [searchTermStart, setSearchTermStart] = useState('');
 const [searchResultsStart, setSearchResultsStart] = useState([]);
 const [showSearchResultsStart, setShowSearchResultsStart] = useState(true);
 const [searchTermEnd, setSearchTermEnd] = useState('');
 const [searchResultsEnd, setSearchResultsEnd] = useState([]);
-const [showSearchResultsEnd, setShowSearchResultsEnd] = useState(true); 
+const [showSearchResultsEnd, setShowSearchResultsEnd] = useState(true);
+// const dispatch = useDispatch();  
 const woodTypes = [
 { name: 'HandWood' },
 { name: 'SoftWood' },
 { name: 'WoodPile' },
 { name: 'WoodTimber' },
-// Add other wood types here
 ]
+const [cargoData, setCargoData] = useState({
+    HardWood: { specie: '', length: '', width: '', quantity: '' },
+    SoftWood: { specie: '', length: '', width: '', quantity: '' },
+    WoodPile: { specie: '', quantity: '' },
+    WoodTimber: { specie: '', length: '', width: '', breadth: '', quantity: '' },
+});
+// const handleCargoDataChange = (woodType, field, value) => {
+//     setCargoData(prevState => ({
+//         ...prevState,
+//         [woodType]: {
+//             ...prevState[woodType],
+//             [field]: value,
+//         },
+//     }));
+// };
+const handleCargoDataChange = (selectedCargoType, property, value) => {
+    // Assuming cargoData is your state for holding cargo information
+    // and it's structured as { WoodTimber: { quantity: 0 }, AnotherCargoType: { quantity: 0 } }
+    const newCargoData = {};
+
+    // Loop through all cargo types in the state
+    Object.keys(cargoData).forEach(cargoType => {
+        if (cargoType === selectedCargoType) {
+            // If it's the selected cargo type, update the specified property
+            newCargoData[cargoType] = { ...cargoData[cargoType], [property]: value };
+        } else {
+            // Reset other cargo types to null
+            newCargoData[cargoType] = null;
+        }
+    });
+
+    // Update the state with the new cargo data
+    setCargoData(newCargoData);
+};
+
+// console.log( "values", formData)
 
 const handleClearForm = () => {
     setSearchTermStart('');
     setSearchTermEnd('');
+    setStartDate(new Date());
+    setPhoneNumber('');
+    setVehicleNumber('');
+    setExpandedWoodType(null);
     // Clear other state variables related to form inputs
 };
 
 
+
+
 const handleSaveForm = async () => {
+
     const formData = {
         startingPoint: searchTermStart,
         endingPoint: searchTermEnd,
-        // Add other form data properties here as needed
+        startDate: startDate.toISOString(),
+        phoneNumber,
+        driverName,
+        vehicleNumber,
+        cargoData,
     };
 
+    console.log('Form data to save:', formData);
+
     try {
-        const response = await fetch('http://example.com/api/save-form', {
+        const response = await fetch('http://localhost:5173/src/modules/Application/result.json', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -73,6 +130,10 @@ const handleSaveForm = async () => {
         // Optionally handle success response from the server
         const responseData = await response.json();
         console.log('Form data saved successfully:', responseData);
+ 
+
+    
+        // dispatch(setFormData(Object.fromEntries(formData.entries())));
 
         // Clear form inputs after successful submission
         setSearchTermStart('');
@@ -197,7 +258,7 @@ useEffect(() => {
             </div>
             {showForm && 
                 (<div className='flex p-5 align-items-center overlayBackdrop' onClick={() => setShowForm(false)} style={{ marginLeft: "80px", width: "100%", height: "100%"}}>
-                 <div className='flex p-5 ' onClick={(e) => e.stopPropagation()} style={{borderRadius: "30px", marginLeft: "100px",marginTop: "50px", backgroundColor: "var(--custom-white)",width: "80%", height: "80%"}}>
+                 <div className='flex p-5 ' onClick={(e) => e.stopPropagation()} style={{borderRadius: "30px", marginLeft: "100px",marginTop: "0px", backgroundColor: "var(--custom-white)",width: "80%"}}>
                 <h2 style={{fontSize: "30px", fontWeight: "bold" }}>
                     Transit Pass Application Form</h2>
                 <p>Fill the form with all information for your route details</p>
@@ -235,16 +296,12 @@ useEffect(() => {
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label style={{fontSize: "18px", fontWeight: "bold"}}>Start Date</Form.Label>
                                     <InputGroup className="mb-2">
-                                        <InputGroup.Text>
-                                        <CalendarPlus size={20} color="#00000a" weight="bold" />
-                                        </InputGroup.Text>
                                         <DatePicker
                                             selected={startDate}
                                             onChange={(date) => setStartDate(date)}
                                             className="form-control"
                                             dateFormat="MMMM d, yyyy"
                                         />
-                                    <Form.Control id="inlineFormInputGroup" placeholder="September 19, 2024" />
                                     </InputGroup>
                                 </Form.Group>
                                 
@@ -254,7 +311,14 @@ useEffect(() => {
                                         <InputGroup.Text>
                                         <UserCircleGear size={20} color="#00000a" weight="bold" />
                                         </InputGroup.Text>
-                                    <Form.Control id="inlineFormInputGroup" placeholder="" />
+                                        <Form.Control 
+                                            id="inlineFormInputGroup" 
+                                            placeholder="+255-xxx-xxx-xxx" 
+                                            pattern="(\+255|0)[0-9]{9}" 
+                                            title="Please enter a valid Tanzanian phone number. For example, +255123456789 or 0123456789."
+                                            value={phoneNumber}
+                                            onChange={(e) => setPhoneNumber(e.target.value)}
+                                        />
                                     </InputGroup>
                                 </Form.Group>
                                 </Col>
@@ -291,7 +355,12 @@ useEffect(() => {
                                         <InputGroup.Text>
                                         <UserCircleGear size={20} color="#00000a" weight="bold" />
                                         </InputGroup.Text>
-                                    <Form.Control id="inlineFormInputGroup" placeholder="" />
+                                    <Form.Control 
+                                        id="inlineFormInputGroup" 
+                                        placeholder="" 
+                                        value={driverName}
+                                        onChange={(e) => setDriverName(e.target.value)}
+                                        />
                                     </InputGroup>
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -300,7 +369,14 @@ useEffect(() => {
                                                 <InputGroup.Text>
                                                 <Truck size={20} color="#00000a" weight="bold" />
                                                 </InputGroup.Text>
-                                                <Form.Control id="inlineFormInputGroup" placeholder="" />
+                                                <Form.Control 
+                                                        id="inlineFormInputGroup" 
+                                                        placeholder="T-XXX-000" 
+                                                        pattern="^T-[A-Z]{3}-\d{3}$" 
+                                                        title="Vehicle number must be in the format T-EDC-234."
+                                                        value={vehicleNumber}
+                                                        onChange={(e) => setVehicleNumber(e.target.value)}
+                                                    />
                                             </InputGroup>
                                     </Form.Group>
                                 </Col>
@@ -337,13 +413,23 @@ useEffect(() => {
                                             <Col className='m-3'>
                                                 <Form.Group controlId="specie">
                                                     <Form.Label>Specie</Form.Label>
-                                                    <Form.Control style={{borderRadius: "22px"}} type="text" placeholder="Enter Specie" />
+                                                    <Form.Control style={{borderRadius: "22px"}} 
+                                                        type="text" 
+                                                        placeholder="Enter Specie"
+                                                        value={cargoData.WoodPile.specie}
+                                                        onChange={(e) => handleCargoDataChange('WoodPile', 'specie', e.target.value)} 
+                                                        />
                                                 </Form.Group>
                                             </Col>
                                             <Col className='m-3'>
                                             <Form.Group controlId="quantity">
                                                     <Form.Label>Quantity</Form.Label>
-                                                    <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Quantity" />
+                                                    <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="number" 
+                                                    placeholder="Enter Quantity" 
+                                                    value={cargoData.WoodPile.quantity}
+                                                    onChange={(e) => handleCargoDataChange('WoodPile', 'quantity', e.target.value)}
+                                                    />
                                                 </Form.Group>
                                             </Col>
                                         </Row>
@@ -353,21 +439,41 @@ useEffect(() => {
                                     <Col className='m-3'>
                                         <Form.Group controlId="specie">
                                             <Form.Label>Specie</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="text" placeholder="Enter Specie" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                        type="text" 
+                                                        placeholder="Enter Specie"
+                                                        value={cargoData.HardWood.specie}
+                                                        onChange={(e) => handleCargoDataChange('HardWood', 'specie', e.target.value)}
+                                                        />
                                         </Form.Group>
                                         <Form.Group controlId="length">
                                             <Form.Label>Length (m)</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Length" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                        type="number" 
+                                                        placeholder="Enter Length" 
+                                                        value={cargoData.HardWood.length}
+                                                        onChange={(e) => handleCargoDataChange('HardWood', 'length', e.target.value)}
+                                                        />
                                         </Form.Group>
                                     </Col>
                                     <Col className='m-3'>
                                         <Form.Group controlId="width">
                                             <Form.Label>Width (m)</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Width" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                        type="number" 
+                                                        placeholder="Enter Width" 
+                                                        value={cargoData.HardWood.width}
+                                                        onChange={(e) => handleCargoDataChange('HardWood', 'width', e.target.value)}
+                                                        />
                                         </Form.Group>
                                         <Form.Group controlId="quantity">
                                             <Form.Label>Quantity</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Quantity" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                        type="number" 
+                                                        placeholder="Enter Quantity" 
+                                                        value={cargoData.HardWood.quantity}
+                                                        onChange={(e) => handleCargoDataChange('HardWood', 'quantity', e.target.value)}
+                                                        />
                                         </Form.Group>
                                     </Col>
                                 </Row>
@@ -377,21 +483,41 @@ useEffect(() => {
                                     <Col className='m-3'>
                                         <Form.Group controlId="specie">
                                             <Form.Label>Specie</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="text" placeholder="Enter Specie" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="text" 
+                                                    placeholder="Enter Specie" 
+                                                    value={cargoData.SoftWood.specie}
+                                                    onChange={(e) => handleCargoDataChange('SoftWood', 'specie', e.target.value)}
+                                                    />
                                         </Form.Group>
                                         <Form.Group controlId="length">
                                             <Form.Label>Length (m)</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Length" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="number" 
+                                                    placeholder="Enter Length" 
+                                                    value={cargoData.SoftWood.length}
+                                                    onChange={(e) => handleCargoDataChange('SoftWood', 'length', e.target.value)}
+                                                    />
                                         </Form.Group>
                                     </Col>
                                     <Col className='m-3'>
                                         <Form.Group controlId="width">
                                             <Form.Label>Width (m)</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Width" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="number" 
+                                                    placeholder="Enter Width"
+                                                    value={cargoData.SoftWood.width}
+                                                    onChange={(e) => handleCargoDataChange('SoftWood', 'width', e.target.value)}
+                                                    />
                                         </Form.Group>
                                         <Form.Group controlId="quantity">
                                             <Form.Label>Quantity</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Quantity" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="number" 
+                                                    placeholder="Enter Quantity" 
+                                                    value={cargoData.SoftWood.quantity}
+                                                    onChange={(e) => handleCargoDataChange('SoftWood', 'quantity', e.target.value)}
+                                                    />
                                         </Form.Group>
                                     </Col>
                                 </Row>
@@ -402,25 +528,50 @@ useEffect(() => {
                                     <Col className='m-3'>
                                         <Form.Group controlId="specie">
                                             <Form.Label>Specie</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="text" placeholder="Enter Specie" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="text" 
+                                                    placeholder="Enter Specie" 
+                                                    value={cargoData.WoodTimber.specie}
+                                                    onChange={(e) => handleCargoDataChange('WoodTimber', 'specie', e.target.value)}
+                                                    />
                                         </Form.Group>
                                         <Form.Group controlId="length">
                                             <Form.Label>Length (m)</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Length" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="number" 
+                                                    placeholder="Enter Length" 
+                                                    value={cargoData.WoodTimber.length}
+                                                    onChange={(e) => handleCargoDataChange('WoodTimber', 'length', e.target.value)}
+                                                    />
                                         </Form.Group>
                                         <Form.Group controlId="width">
                                             <Form.Label>Width (m)</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Width" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="number" 
+                                                    placeholder="Enter Width" 
+                                                    value={cargoData.WoodTimber.width}
+                                                    onChange={(e) => handleCargoDataChange('WoodTimber', 'width', e.target.value)}
+                                                    />
                                         </Form.Group>
                                     </Col>
                                     <Col className='m-3'>
                                         <Form.Group controlId="breadth">
                                             <Form.Label>Breadth (m)</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Breadth" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="number" 
+                                                    placeholder="Enter Breadth" 
+                                                    value={cargoData.WoodTimber.breadth}
+                                                    onChange={(e) => handleCargoDataChange('WoodTimber', 'breadth', e.target.value)}
+                                                    />
                                         </Form.Group>
                                         <Form.Group controlId="quantity">
                                             <Form.Label>Quantity</Form.Label>
-                                            <Form.Control style={{borderRadius: "22px"}} type="number" placeholder="Enter Quantity" />
+                                            <Form.Control style={{borderRadius: "22px"}} 
+                                                    type="number" 
+                                                    placeholder="Enter Quantity" 
+                                                    value={cargoData.WoodTimber.quantity}
+                                                    onChange={(e) => handleCargoDataChange('WoodTimber', 'quantity', e.target.value)}
+                                                    />
                                         </Form.Group>
                                     </Col>
                                 </Row>    

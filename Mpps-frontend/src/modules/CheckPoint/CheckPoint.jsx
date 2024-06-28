@@ -1,21 +1,29 @@
-// import React from "react";
-
+// import {React, useState} from "react";
 import '../../custom-colors.css';
 import '../../App.css'; 
-
 import {MapPin} from "@phosphor-icons/react";
-
 import { Row, Col } from 'react-bootstrap';
-
-
 import FooterSpe from "../../components/Footer/FooterSpe";
 import SideNavBar from '../../components/SideNavBar/SideNavBar';
 import Map from "../../modules/MapRouting/Map";
-
-
 import NavBarPrivate from "../../components/NavBar/NavBarPrivate";
+// import { useSelector, useDispatch } from 'react-redux';
+// import { setFormData } from '../../controllers/Store.jsx'; 
+
 
 const Checkpoint = () => {
+    // const formData = useSelector((state) => state.formData.formData);
+    // const dispatch = useDispatch();
+    // const updateFormData = (newData) => {
+    //     dispatch(setFormData(newData));
+    // };
+
+    // const [startingPoint, setStartingPoint] = useState("");
+    // const [endingPoint, setEndingPoint] = useState("");
+
+    
+    // const startingPoint = formData.get('startingPoint');
+    // const destinationPoint = formData.get('endingPoint');
 
     return(
         <div>
@@ -46,10 +54,10 @@ const Checkpoint = () => {
                                 </Col>
                                 <Col lg={5}>
                                     <div style={{borderRadius: "7px", color: "var(--whitish-green)", backgroundColor: "var(--darkish-green)"}}>
-                                        <p className='m-2' >Dar es salaam</p>
+                                        {/* <p className='m-2' >{startingPoint}</p> */}
                                     </div>
                                     <div style={{borderRadius: "7px", color: "var(--whitish-green)", backgroundColor: "var(--darkish-green)"}}>
-                                        <p className='m-2'>Iringa</p>
+                                        {/* <p className='m-2'>{endingPoint}</p> */}
                                     </div>
                                     <div style={{borderRadius: "7px", color: "var(--whitish-green)", backgroundColor: "var(--darkish-green)"}}>
                                         <p className='m-2'>6</p>

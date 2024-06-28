@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './modules/authentication/Login';
@@ -8,13 +9,14 @@ import Products from './modules/Products/Products';
 import Team from './modules/Team/Team';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './modules/PrivateRoute/PrivateRoute';
-
 // private dashboard implementation
 import Dashboard from './modules/Dashboard/Dashboard';
 import Verify from './modules/Verify/Verify';
 import Payment from './modules/Payment/Payment';
 import Application from './modules/Application/Application';
 import CheckPoint from './modules/CheckPoint/CheckPoint';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
 
 
