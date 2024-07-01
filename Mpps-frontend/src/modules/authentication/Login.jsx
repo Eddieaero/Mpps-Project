@@ -1,6 +1,6 @@
 // import React from "react";
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Navigate } from 'react-router-dom';
 // import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
 import axios from 'axios';
 
@@ -26,26 +26,39 @@ import {ArrowRight} from "@phosphor-icons/react";
 
 const Login = () => {
     const [formData, setFormData] = useState({ email: '', password: '' });
-
+    const [loginSuccess, setLoginSuccess] = useState(false);
+    const [loginError, setLoginError] = useState('');
     
     const handleSubmit = async (event) => {
         event.preventDefault();
-      
         const { email, password } = formData;
-      
         try {
           // Get CSRF token from Django
-          const csrfToken = document.cookie.split('; ').find(row => row.startsWith('csrftoken')).split('=')[1];
+        //   const csrfToken = document.cookie.split('; ').find(row => row.startsWith('csrftoken')).split('=')[1];
 
           // Set CSRF token in the headers of axios
-          axios.defaults.headers.post['X-CSRFToken'] = csrfToken;
-          const response = await axios.post('/api/login', { email, password }); 
+        //   axios.defaults.headers.post['X-CSRFToken'] = csrfToken;
+          const response = await axios.post('http://192.168.1.198:8000/MppsUser/login/', { email, password }); 
           // Handle successful login (explained in next steps)
-          console.log('Login successful:', response.data); // Example: log response for demonstration
+          console.log('Login successful:', response.data);
+          if (response.data.success) {
+            // Update state to indicate login success
+            setLoginSuccess(true);
+          } else {
+            // Handle login failure (e.g., show an error message)
+          }
+          if (loginSuccess) {
+            return <Navigate to="/dashboard" replace />;
+          }
+           // Example: log response for demonstration
           // Store token in session storage
           sessionStorage.setItem('token', response.data.token);
         } catch (error) {
-          console.error('Login failed:', error.response.data); // Example: log error for demonstration
+          console.error('Login failed:', error.response);
+        //   console.log('Login failed:', formData.email, formData.password);
+          const errorMessage = error.response && error.response.data ? error.response.data : 'Incorrect Username or Password. Please try again.';
+          console.error(errorMessage); // Log the error message for debugging purposes
+          setLoginError(errorMessage); // Update the state with the error message // Example: log error for demonstration
           // Handle login error (explained in next steps)
         }
       };
@@ -65,11 +78,11 @@ const Login = () => {
                     </Col>
                     <Col>
                         <Card className="m-3 border-0 bg-transparent" border=''>
-                            <h1 className='text-center'>Login</h1>
+                            <h1 className='text-center'>Join In</h1>
                         <Form onSubmit={handleSubmit}>
                             
                             <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
+                                <Form.Label>Username</Form.Label>
                                 <Form.Control 
                                     type="email" 
                                     placeholder="JohnDoe@example.com" 
@@ -94,9 +107,11 @@ const Login = () => {
                             {/* <Button variant="primary" type="submit">
                                 Submit
                             </Button> */}
+                            {loginError && <div className="alert alert-danger" role="alert">{loginError}</div>}
                             <div className='d-flex align-items-center justify-content-center'>
                                 <Button type='submit'  className=" myButton m-1 align-items-center justify-content-center "  style={{  border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
-                                    <NavLink to="/Dashboard" style={{   color: "var(--plain-black)", textDecoration: 'none'   }} >submit </NavLink>
+                                    {/* <NavLink to="/Dashboard" onClick={handleSubmit} style={{   color: "var(--plain-black)", textDecoration: 'none'   }} >submit </NavLink> */}
+                                    <NavLink onClick={handleSubmit} style={{   color: "var(--plain-black)", textDecoration: 'none'   }} >Login </NavLink>
                                     {/* Submit */}
                                 </Button>
                             </div>

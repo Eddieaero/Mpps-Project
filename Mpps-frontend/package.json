@@ -12,6 +12,7 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
     "@reduxjs/toolkit": "^2.2.5",
+    "@sentry/react": "^8.13.0",
     "bootstrap": "^5.3.3",
     "mapbox-gl": "^3.3.0",
     "prop-types": "^15.8.1",

@@ -1,12 +1,8 @@
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
-
-import { Navigate, NavLink } from "react-router-dom";
-
+import { NavLink, useNavigate, Navigate } from "react-router-dom";
 // import Footer from "../../components/Footer/Footer";
 import FooterSpe from "../../components/Footer/FooterSpe";
-
-
 import NavBar from "../../components/NavBar/NavBar";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -14,11 +10,10 @@ import Button from "react-bootstrap/Button";
 // import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
-
-
 import bgpic from "../../assets/pine ui background.svg";
 // import {ArrowRight, Copy} from "@phosphor-icons/react";
 import {ArrowRight} from "@phosphor-icons/react";
+import Login from './Login';
 
 
 
@@ -31,6 +26,9 @@ const Signup = () => {
     const [email, setEmail] = useState();
     const [phone_number, setPhoneNumber] = useState();
     const [password, setPassword] = useState(); 
+    const [registerSuccess, setRegisterSuccess] = useState(false);
+    const [registerError, setRegisterError] = useState('');
+    const navigate = useNavigate();
 
 
     console.log(first_name, last_name, company_name, address, email, phone_number, password)
@@ -72,7 +70,7 @@ const Signup = () => {
         // const formData = new FormData(e.target); // Replace with your form selector if needed
     
         try {
-          const response = await axios.post('http://192.168.1.198:8000/MppsUser/register/', {
+          const response = await axios.post('http://127.0.0.1:8000/MppsUser/register/', {
             first_name,
             last_name,
             email,
@@ -87,14 +85,42 @@ const Signup = () => {
           });
     
           console.log('Registration successful:', response.data); // Log response data for debugging
-          Navigate.push('/authentication/Login'); // Redirect to login page
+          // { registerSuccess && (<Navigate to="/dashboard"  replace={true}/>) }
+          // <Navigate to="/dashboard" replace/>
+         if (response.data.success) {
+            // Update state to indicate login success
+            setRegisterSuccess(true);
+            
+          } else {
+            setRegisterSuccess(false);
+            // Handle login failure (e.g., show an error message)
+          }
+          if (registerSuccess) {
+            console.log('Registration successful:', response.data); // Log response data for debugging
+          }
         } catch (error) {
           console.error('Registration error:', error.response?.data || error.message); // Handle errors
+          const errorMessage = error.response && error.response.data ? error.response.data : 'Incorrect Username or Password. Please try again.';
+          console.error(errorMessage); // Log the error message for debugging purposes
+          setRegisterError(errorMessage);
         }
+            navigate('/dashboard'); // Navigate to the login page
+
+
+        // useEffect(() => {
+        //   if (registerSuccess) {
+        //     // navigate('./login'); // Navigate to the login page
+        //     <Navigate to="/dashboard" replace/>
+        //   }
+        // }, [registerSuccess]);
       };
+      
+
 
     return(
+        
         <div>
+          {/* { registerSuccess && (<Navigate to="/dashboard"  replace={true}/>) } */}
             <div>
               <NavBar renderButtons={false}/>
             </div>
@@ -189,7 +215,7 @@ const Signup = () => {
                             />
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                        {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Confirm Password</Form.Label>
                             <Form.Control 
                                 type="password" 
@@ -198,13 +224,14 @@ const Signup = () => {
                                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$" 
                                 // onChange={handlePasswordChange}
                             />
-                        </Form.Group>
+                        </Form.Group> */}
 
                         <div>
+                        {registerError && <div className="alert alert-danger" role="alert">{registerError}</div>}
                         <div className="d-flex align-items-center justify-content-center">
-                            <Button type="submit" className=" myButton m-2 align-items-center justify-content-center "  style={{ height: "35px", width: "80px", border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
+                            <Button type="submit" onClick={handleSubmit} className=" myButton m-2 align-items-center justify-content-center "  
+                                    style={{ height: "35px", width: "80px", border: " 2px solid var(--light-green)", textColor: "var(--plain-black)", backgroundColor: "var(--whitish-green)", color: "var(--plain-black)" }} >
                                     <p className='text-center' style={{   color: "var(--plain-black)", textDecoration: 'none'  }} > Submit </p>
-                                    
                             </Button>
                         </div>
                         <div className='d-flex align-items-center justify-content-center'>
