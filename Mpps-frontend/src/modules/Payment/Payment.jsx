@@ -4,7 +4,7 @@ import '../../custom-colors.css';
 import '../../App.css'; 
 
 import FooterSpe from "../../components/Footer/FooterSpe";
-import SideNavBar from '../../components/SideNavBar/SideNavBar';
+import SideNavBar from '../../components/SideNavBar/SIdeNavBar.jsx';
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

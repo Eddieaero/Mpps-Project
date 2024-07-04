@@ -4,7 +4,7 @@ import '../../App.css';
 import {MapPin} from "@phosphor-icons/react";
 import { Row, Col } from 'react-bootstrap';
 import FooterSpe from "../../components/Footer/FooterSpe";
-import SideNavBar from '../../components/SideNavBar/SideNavBar';
+import SideNavBar from '../../components/SideNavBar/SIdeNavBar.jsx';
 import Map from "../../modules/MapRouting/Map";
 import NavBarPrivate from "../../components/NavBar/NavBarPrivate";
 // import { useSelector, useDispatch } from 'react-redux';

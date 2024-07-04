@@ -9,7 +9,7 @@ import {SealWarning, PlusCircle} from "@phosphor-icons/react";
 
 // imported user-defined components
 import FooterSpe from "../../components/Footer/FooterSpe";
-import SideNavBar from '../../components/SideNavBar/SideNavBar';
+import SideNavBar from '../../components/SideNavBar/SIdeNavBar.jsx';
 import NavBarPrivate from "../../components/NavBar/NavBarPrivate";
 
 // react bootstrap classes

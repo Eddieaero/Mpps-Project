@@ -9,7 +9,7 @@ import '../../App.css';
 // import Footer from "../../components/Footer/Footer";
 import FooterSpe from "../../components/Footer/FooterSpe";
 
-import SideNavBar from "../../components/SideNavBar/SideNavBar";
+import SideNavBar from "../../components/SideNavBar/SIdeNavBar.jsx";
 import NavBarPrivate from "../../components/NavBar/NavBarPrivate";
 // import Container from 'react-bootstrap/esm/Container';
 // import Form from "react-bootstrap/Form";

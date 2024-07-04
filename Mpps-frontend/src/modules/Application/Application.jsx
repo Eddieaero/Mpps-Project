@@ -5,7 +5,7 @@ import '../../App.css';
 import FooterSpe from "../../components/Footer/FooterSpe";
 import {MapPin, CalendarPlus, UserCircleGear, Truck, Plus, Rainbow, ArrowLineDown} from "@phosphor-icons/react";
 import NavBarPrivate from "../../components/NavBar/NavBarPrivate";
-import SideNavBar from '../../components/SideNavBar/SideNavBar';
+import SideNavBar from '../../components/SideNavBar/SIdeNavBar.jsx';
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
